@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-matte-black: #0a0a0a;
+  --color-dark-gray: #1a1a1a;
+  --color-gold: #D4AF37;
+  --color-gold-dark: #B8960F;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-matte-black);
+  color: white;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gold-glow {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  }
+  
+  .gold-glow-strong {
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-gold hover:bg-gold-dark text-matte-black font-bold py-4 px-8 rounded-sm 
+           uppercase tracking-extra-wide transition-all duration-300 
+           hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-gold text-gold hover:bg-gold hover:text-matte-black 
+           font-bold py-4 px-8 rounded-sm uppercase tracking-extra-wide 
+           transition-all duration-300;
+  }
+  
+  .heading-primary {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-extra-wide;
+  }
+  
+  .heading-secondary {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide;
+  }
+  
+  .heading-tertiary {
+    @apply text-2xl md:text-3xl font-bold uppercase tracking-wide;
+  }
+  
+  .card {
+    @apply bg-dark-gray border border-gold/20 rounded-sm p-6 
+           transition-all duration-300 hover:border-gold/50 
+           hover:shadow-[0_0_20px_rgba(212,175,55,0.2)];
+  }
+}
+
