@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import About from '@/components/About'
@@ -16,6 +17,7 @@ export default function Home() {
       className="min-h-screen"
       suppressHydrationWarning
     >
+      <Navigation />
       <Hero />
       <Services />
       <About />
