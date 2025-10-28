@@ -4,6 +4,10 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [],
   },
+  // Allow cross-origin requests for development (mobile testing)
+  experimental: {
+    allowedDevOrigins: ['192.168.3.101', '192.168.1.*', '10.0.0.*'],
+  },
   async headers() {
     return [
       {
