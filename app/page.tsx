@@ -14,6 +14,7 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="min-h-screen"
+      suppressHydrationWarning
     >
       <Hero />
       <Services />
