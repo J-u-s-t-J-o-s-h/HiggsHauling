@@ -39,14 +39,22 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           {/* Logo */}
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8 flex justify-center relative">
+            {/* Ambient Gold Glow */}
+            <div 
+              className="absolute inset-0 blur-3xl opacity-40"
+              style={{
+                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.6) 0%, rgba(212, 175, 55, 0.3) 40%, transparent 70%)',
+                transform: 'scale(1.2)'
+              }}
+            />
             <Image
               src="/logo.png"
               alt="Higgs Hauling Logo"
               width={600}
               height={200}
               priority
-              className="w-full max-w-2xl h-auto"
+              className="w-full max-w-2xl h-auto relative z-10 drop-shadow-[0_0_40px_rgba(212,175,55,0.5)]"
             />
           </div>
 
