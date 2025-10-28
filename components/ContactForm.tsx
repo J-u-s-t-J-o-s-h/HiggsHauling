@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 type FormData = {
   name: string
@@ -13,6 +15,8 @@ type FormData = {
   address: string
   dumpsterSize: string
   rentalDuration: string
+  startDate: Date | null
+  endDate: Date | null
   message: string
 }
 
@@ -28,6 +32,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
   } = useForm<FormData>()
 
@@ -37,18 +42,26 @@ export default function ContactForm() {
     setErrorMessage('')
 
     try {
-      const response = await fetch('/api/contact', {
+      // Format dates for submission
+      const formattedData = {
+        ...data,
+        startDate: data.startDate ? data.startDate.toLocaleDateString() : '',
+        endDate: data.endDate ? data.endDate.toLocaleDateString() : '',
+        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY'
+      }
+
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formattedData),
       })
 
       const result = await response.json()
 
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to send message')
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Failed to send message')
       }
 
       setSubmitStatus('success')
@@ -232,6 +245,66 @@ export default function ContactForm() {
                 {errors.rentalDuration && (
                   <p className="mt-1 text-sm text-red-400">{errors.rentalDuration.message}</p>
                 )}
+              </div>
+            </div>
+
+            {/* Date Range Selection */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-gold uppercase tracking-wide mb-2">
+                  Delivery Date *
+                </label>
+                <Controller
+                  control={control}
+                  name="startDate"
+                  rules={{ required: 'Please select a delivery date' }}
+                  render={({ field: { onChange, value } }) => (
+                    <DatePicker
+                      selected={value}
+                      onChange={onChange}
+                      minDate={new Date()}
+                      placeholderText="Select delivery date"
+                      className="w-full px-4 py-3 bg-matte-black border border-gold/30 rounded-sm text-white 
+                               focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
+                      calendarClassName="bg-matte-black border border-gold/30"
+                      dayClassName={(date) => 
+                        date < new Date() 
+                          ? "text-gray-500 cursor-not-allowed" 
+                          : "text-white hover:bg-gold hover:text-matte-black"
+                      }
+                    />
+                  )}
+                />
+                {errors.startDate && (
+                  <p className="mt-1 text-sm text-red-400">{errors.startDate.message}</p>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gold uppercase tracking-wide mb-2">
+                  Pickup Date
+                </label>
+                <Controller
+                  control={control}
+                  name="endDate"
+                  render={({ field: { onChange, value } }) => (
+                    <DatePicker
+                      selected={value}
+                      onChange={onChange}
+                      minDate={new Date()}
+                      placeholderText="Select pickup date (optional)"
+                      className="w-full px-4 py-3 bg-matte-black border border-gold/30 rounded-sm text-white 
+                               focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
+                      calendarClassName="bg-matte-black border border-gold/30"
+                      dayClassName={(date) => 
+                        date < new Date() 
+                          ? "text-gray-500 cursor-not-allowed" 
+                          : "text-white hover:bg-gold hover:text-matte-black"
+                      }
+                    />
+                  )}
+                />
+                <p className="mt-1 text-xs text-gray-400">Leave blank if flexible pickup date</p>
               </div>
             </div>
 
