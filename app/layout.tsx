@@ -16,14 +16,15 @@ const bebasNeue = Bebas_Neue({
 })
 
 export const metadata: Metadata = {
-  title: 'Higgs Hauling | Roll-Off Dumpster Rentals | Augusta GA',
-  description: 'Military-class professionalism meets reliable dumpster rental services. Veteran-owned roll-off dumpster rentals serving Augusta, GA and surrounding areas. Fast delivery, on-time service.',
+  title: 'Higgs Hauling | Roll-Off Dumpster Rentals | Lawton OK',
+  description: 'Military-class professionalism meets reliable dumpster rental services. Veteran-owned roll-off dumpster rentals serving Lawton, Oklahoma and surrounding areas. Fast delivery, on-time service.',
   keywords: [
     'dumpster rental',
     'roll-off dumpster',
     'waste management',
-    'Augusta GA',
-    'dumpster rental Augusta',
+    'Lawton OK',
+    'Lawton Oklahoma',
+    'dumpster rental Lawton',
     'veteran owned',
     'construction dumpster',
     'residential dumpster',
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Higgs Hauling | Roll-Off Dumpster Rentals',
-    description: 'Mission-driven dumpster rental service. On time. Every time. Veteran-owned and operated in Augusta, GA.',
+    description: 'Mission-driven dumpster rental service. On time. Every time. Veteran-owned and operated in Lawton, Oklahoma.',
     url: 'https://higgshauling.com',
     siteName: 'Higgs Hauling',
     locale: 'en_US',

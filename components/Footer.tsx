@@ -59,7 +59,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-gray-400">
-                📍 Augusta, GA
+                📍 Lawton, Oklahoma
               </li>
             </ul>
           </div>

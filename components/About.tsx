@@ -46,7 +46,7 @@ export default function About() {
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
                 Higgs Hauling is a <strong className="text-gold">veteran-owned and operated</strong> roll-off 
-                dumpster rental company serving Augusta, GA and the surrounding areas. Founded on the principles 
+                dumpster rental company serving Lawton, Oklahoma and the surrounding areas. Founded on the principles 
                 of discipline, integrity, and excellence, we bring military-class professionalism to every project.
               </p>
               

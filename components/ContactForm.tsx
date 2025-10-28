@@ -180,7 +180,7 @@ export default function ContactForm() {
                   {...register('address', { required: 'Address is required' })}
                   className="w-full px-4 py-3 bg-matte-black border border-gold/30 rounded-sm text-white 
                            focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
-                  placeholder="123 Main St, Augusta, GA"
+                  placeholder="123 Main St, Lawton, OK"
                 />
                 {errors.address && (
                   <p className="mt-1 text-sm text-red-400">{errors.address.message}</p>

@@ -1,6 +1,6 @@
 # Higgs Hauling - Roll-Off Dumpster Rentals
 
-A modern, conversion-focused website for Higgs Hauling, a veteran-owned roll-off dumpster rental company serving Augusta, GA and surrounding areas.
+A modern, conversion-focused website for Higgs Hauling, a veteran-owned roll-off dumpster rental company serving Lawton, Oklahoma and surrounding areas.
 
 ## 🎨 Design Theme
 

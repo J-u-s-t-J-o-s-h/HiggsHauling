@@ -110,7 +110,7 @@ export default function Services() {
           </h2>
           <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Choose the right dumpster size for your project. We serve Augusta, GA and surrounding areas 
+            Choose the right dumpster size for your project. We serve Lawton, Oklahoma and surrounding areas 
             with flexible rental terms and professional service.
           </p>
         </motion.div>
@@ -149,7 +149,7 @@ export default function Services() {
           className="mt-16 text-center"
         >
           <p className="text-gray-400 text-sm uppercase tracking-wide">
-            Proudly serving Augusta, GA and surrounding areas • Flexible rental terms • Call for custom quotes
+            Proudly serving Lawton, Oklahoma and surrounding areas • Flexible rental terms • Call for custom quotes
           </p>
         </motion.div>
       </div>
