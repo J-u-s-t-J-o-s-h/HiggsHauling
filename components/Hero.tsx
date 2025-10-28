@@ -74,18 +74,18 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             onClick={scrollToContact}
-            className="btn-primary text-lg md:text-xl"
+            className="btn-primary text-lg md:text-xl mb-20 md:mb-24"
           >
             Get a Quote
           </motion.button>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Hidden on mobile, shown on desktop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-gold rounded-full flex justify-center">
             <motion.div
