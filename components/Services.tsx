@@ -40,7 +40,7 @@ const features = [
   {
     icon: '⚡',
     title: 'Fast Delivery',
-    description: 'Same-day or next-day delivery available'
+    description: 'Same-day or next-day delivery available depending on inventory'
   },
   {
     icon: '🎯',

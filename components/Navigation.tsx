@@ -65,32 +65,35 @@ export default function Navigation() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-custom">
+      <div className="max-w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection('hero')}
-            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <Image
-              src="/logo.png"
-              alt="Higgs Hauling"
-              width={120}
-              height={40}
-              className="h-8 w-auto"
-              priority
-            />
+            <div className="relative">
+              <div className="absolute inset-0 bg-gold/20 blur-xl rounded-lg" />
+              <Image
+                src="/logo.png"
+                alt="Higgs Hauling"
+                width={220}
+                height={73}
+                className="h-14 w-auto relative z-10"
+                priority
+              />
+            </div>
           </motion.button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-10 xl:space-x-12 flex-1 justify-center">
             {navigationItems.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative font-bold uppercase tracking-wide text-sm transition-colors duration-300 ${
+                className={`relative font-bold uppercase tracking-wide text-sm lg:text-base transition-colors duration-300 ${
                   activeSection === item.id 
                     ? 'text-gold' 
                     : 'text-white hover:text-gold'
@@ -114,7 +117,7 @@ export default function Navigation() {
           {/* CTA Button - Desktop */}
           <motion.button
             onClick={() => scrollToSection('contact')}
-            className="hidden md:block btn-secondary text-sm px-6 py-2"
+            className="hidden md:block btn-secondary text-sm lg:text-base px-6 lg:px-8 py-2 lg:py-2.5 flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

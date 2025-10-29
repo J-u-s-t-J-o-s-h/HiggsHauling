@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import DumpsterButton from './DumpsterButton'
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -68,16 +69,10 @@ export default function Hero() {
             Roll-Off Dumpster Rentals
           </motion.p>
 
-          {/* CTA Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            onClick={scrollToContact}
-            className="btn-primary text-lg md:text-xl mb-20 md:mb-24"
-          >
-            Get a Quote
-          </motion.button>
+          {/* CTA Button with Dumpster Animation */}
+          <div className="mb-20 md:mb-24">
+            <DumpsterButton onClick={scrollToContact} />
+          </div>
         </motion.div>
 
         {/* Scroll Indicator - Hidden on mobile, shown on desktop */}
