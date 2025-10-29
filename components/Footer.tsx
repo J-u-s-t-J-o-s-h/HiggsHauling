@@ -37,6 +37,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#faq" className="hover:text-gold transition-colors">
+                  FAQ
+                </a>
+              </li>
+              <li>
                 <a href="#contact" className="hover:text-gold transition-colors">
                   Get a Quote
                 </a>
@@ -54,8 +59,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@higgshauling.com" className="hover:text-gold transition-colors">
-                  ✉️ info@higgshauling.com
+                <a href="mailto:higgshauling2024@gmail.com" className="hover:text-gold transition-colors">
+                  ✉️ higgshauling2024@gmail.com
                 </a>
               </li>
               <li className="text-gray-400">
@@ -94,7 +99,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="mailto:info@higgshauling.com"
+            href="mailto:higgshauling2024@gmail.com"
             className="w-10 h-10 flex items-center justify-center border-2 border-gold rounded-sm 
                      hover:bg-gold hover:text-matte-black transition-all duration-300"
             aria-label="Email"

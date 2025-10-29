@@ -6,33 +6,33 @@ import { useRef } from 'react'
 
 const dumpsterSizes = [
   {
-    size: '10 Yard',
-    dimensions: '12\' L × 8\' W × 3.5\' H',
-    capacity: '~4 pickup truck loads',
-    ideal: 'Small cleanouts, minor renovations, yard waste',
-    price: 'Call for Quote'
+    size: '13 Yard',
+    dimensions: '14\' L × 8\' W × 3.5\' H',
+    price1to3: '$340',
+    price4to7: '$395',
+    includedTons: '1 ton',
+    overageFee: '$60/ton',
+    ideal: 'Small cleanouts, minor renovations, yard waste'
   },
   {
-    size: '20 Yard',
-    dimensions: '22\' L × 8\' W × 4.5\' H',
-    capacity: '~8 pickup truck loads',
-    ideal: 'Medium projects, roofing, flooring removal',
-    price: 'Call for Quote',
+    size: '15 Yard',
+    dimensions: '16\' L × 8\' W × 3.5\' H',
+    price1to3: '$360',
+    price4to7: '$415',
+    includedTons: '1 ton',
+    overageFee: '$60/ton',
+    ideal: 'Medium projects, bathroom remodels',
     popular: true
   },
   {
-    size: '30 Yard',
-    dimensions: '22\' L × 8\' W × 6\' H',
-    capacity: '~12 pickup truck loads',
-    ideal: 'Large renovations, new construction',
-    price: 'Call for Quote'
-  },
-  {
-    size: '40 Yard',
-    dimensions: '22\' L × 8\' W × 8\' H',
-    capacity: '~16 pickup truck loads',
-    ideal: 'Major construction, commercial projects',
-    price: 'Call for Quote'
+    size: '20 Yard',
+    dimensions: '16\' L × 8\' W × 4.5\' H',
+    price1to3: '$420',
+    price4to7: '$470',
+    includedTons: '2 tons',
+    overageFee: '$60/ton',
+    ideal: 'Roofing, flooring removal, large cleanouts',
+    popular: true
   }
 ]
 
@@ -71,20 +71,28 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
           Most Popular
         </div>
       )}
-      <h3 className="heading-tertiary text-gold mb-4">{service.size}</h3>
+      <h3 className="heading-tertiary text-gold mb-2">{service.size}</h3>
+      <p className="text-gray-400 text-sm mb-4">{service.dimensions}</p>
       <div className="space-y-3 text-gray-300">
-        <p className="text-sm">
-          <span className="text-white font-semibold">Dimensions:</span> {service.dimensions}
-        </p>
-        <p className="text-sm">
-          <span className="text-white font-semibold">Capacity:</span> {service.capacity}
-        </p>
-        <p className="text-sm">
+        <div className="bg-dark-gray/50 p-3 rounded">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">1-3 Day Price</p>
+          <p className="text-gold font-bold text-2xl">{service.price1to3}</p>
+        </div>
+        <div className="bg-dark-gray/50 p-3 rounded">
+          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">4-7 Day Price</p>
+          <p className="text-gold font-bold text-2xl">{service.price4to7}</p>
+        </div>
+        <div className="pt-2 border-t border-gold/20">
+          <p className="text-sm">
+            <span className="text-white font-semibold">Included:</span> {service.includedTons}
+          </p>
+          <p className="text-sm">
+            <span className="text-white font-semibold">Overage:</span> {service.overageFee}
+          </p>
+        </div>
+        <p className="text-sm pt-2">
           <span className="text-white font-semibold">Ideal for:</span> {service.ideal}
         </p>
-        <div className="pt-4 border-t border-gold/20">
-          <p className="text-gold font-bold text-xl">{service.price}</p>
-        </div>
       </div>
     </motion.div>
   )
@@ -116,7 +124,7 @@ export default function Services() {
         </motion.div>
 
         {/* Dumpster Size Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto">
           {dumpsterSizes.map((service, index) => (
             <ServiceCard key={service.size} service={service} index={index} />
           ))}

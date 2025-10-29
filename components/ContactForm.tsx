@@ -370,8 +370,8 @@ export default function ContactForm() {
               <a href="tel:+15555551234" className="hover:text-gold-dark transition-colors">
                 📞 (555) 555-1234
               </a>
-              <a href="mailto:info@higgshauling.com" className="hover:text-gold-dark transition-colors">
-                ✉️ info@higgshauling.com
+              <a href="mailto:higgshauling2024@gmail.com" className="hover:text-gold-dark transition-colors">
+                ✉️ higgshauling2024@gmail.com
               </a>
             </div>
           </motion.div>
