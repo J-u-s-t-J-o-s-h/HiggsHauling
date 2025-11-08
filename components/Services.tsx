@@ -31,8 +31,7 @@ const dumpsterSizes = [
     price4to7: '$470',
     includedTons: '2 tons',
     overageFee: '$60/ton',
-    ideal: 'Roofing, flooring removal, large cleanouts',
-    popular: true
+    ideal: 'Roofing, flooring removal, large cleanouts'
   }
 ]
 
