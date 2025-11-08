@@ -74,7 +74,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
           className="flex-shrink-0"
         >
           <svg 
-            className="w-6 h-6 text-gold" 
+            className="w-6 h-6 text-construction-orange" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -113,8 +113,12 @@ export default function FAQ() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="faq" className="section-padding bg-dark-gray">
-      <div className="container-custom">
+    <section id="faq" className="section-padding bg-dark-gray relative overflow-hidden">
+      {/* Orange accent orbs */}
+      <div className="absolute top-10 right-20 w-[500px] h-[500px] bg-construction-orange/[0.1] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }}></div>
+      <div className="absolute bottom-10 left-20 w-[450px] h-[450px] bg-construction-orange-light/[0.08] rounded-full blur-3xl"></div>
+      
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
@@ -126,7 +130,10 @@ export default function FAQ() {
           <h2 className="heading-secondary text-white mb-4">
             Frequently Asked <span className="text-gold">Questions</span>
           </h2>
-          <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
+          <div className="flex gap-2 justify-center mx-auto mb-6">
+            <div className="w-12 h-1 bg-gold"></div>
+            <div className="w-12 h-1 bg-construction-orange"></div>
+          </div>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
             Got questions? We've got answers. Here are the most common questions our customers ask.
           </p>

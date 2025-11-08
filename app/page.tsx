@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import About from '@/components/About'
+import ServiceAreas from '@/components/ServiceAreas'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
@@ -22,6 +23,7 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
+      <ServiceAreas />
       <FAQ />
       <ContactForm />
       <Footer />

@@ -25,9 +25,12 @@ export default function About() {
 
   return (
     <section id="about" className="section-padding bg-dark-gray relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+      {/* Decorative Elements - Enhanced */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gold/[0.1] rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-40 w-[400px] h-[400px] bg-construction-orange/[0.12] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }}></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-construction-orange-light/[0.1] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-40 w-[450px] h-[450px] bg-gold/[0.08] rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-construction-orange/[0.06] rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -41,7 +44,10 @@ export default function About() {
             <h2 className="heading-secondary text-white mb-6">
               About <span className="text-gold">Higgs Hauling</span>
             </h2>
-            <div className="w-24 h-1 bg-gold mb-8"></div>
+            <div className="flex gap-2 mb-8">
+              <div className="w-12 h-1 bg-gold"></div>
+              <div className="w-12 h-1 bg-construction-orange"></div>
+            </div>
             
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
@@ -68,7 +74,7 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="mt-10 border-l-4 border-gold pl-6 py-4 bg-matte-black/50"
+              className="mt-10 border-l-4 border-construction-orange pl-6 py-4 bg-matte-black/50"
             >
               <p className="text-2xl md:text-3xl font-bold text-gold italic leading-relaxed">
                 "Mission-driven service.<br />On time. Every time."

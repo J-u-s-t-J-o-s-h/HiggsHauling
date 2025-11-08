@@ -66,7 +66,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                 height="auto"
                 viewBox="0 0 320 120"
                 preserveAspectRatio="xMidYMid meet"
-                className="drop-shadow-[0_0_20px_rgba(212,175,55,0.6)] max-h-32 sm:max-h-40"
+                className="drop-shadow-[0_0_20px_rgba(255,107,53,0.6)] max-h-32 sm:max-h-40"
               >
                 {/* Complete Scene - Truck Movement */}
                  <motion.g
@@ -203,24 +203,24 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                     }}
                     style={{ originX: '130px', originY: '70px' }}
                   >
-                    {/* Dumpster Container - lying flat on truck bed */}
+                    {/* Dumpster Container - lying flat on truck bed - CONSTRUCTION ORANGE! */}
                     <rect
                       x="50"
                       y="28"
                       width="75"
                       height="22"
-                      fill="#2563eb"
+                      fill="#FF6B35"
                       stroke="#D4AF37"
                       strokeWidth="2"
                       rx="1"
                     />
                     
                     {/* Container Ribs - vertical when lying flat */}
-                    <line x1="62" y1="28" x2="62" y2="50" stroke="#1e40af" strokeWidth="1.5" />
-                    <line x1="75" y1="28" x2="75" y2="50" stroke="#1e40af" strokeWidth="1.5" />
-                    <line x1="88" y1="28" x2="88" y2="50" stroke="#1e40af" strokeWidth="1.5" />
-                    <line x1="101" y1="28" x2="101" y2="50" stroke="#1e40af" strokeWidth="1.5" />
-                    <line x1="114" y1="28" x2="114" y2="50" stroke="#1e40af" strokeWidth="1.5" />
+                    <line x1="62" y1="28" x2="62" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
+                    <line x1="75" y1="28" x2="75" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
+                    <line x1="88" y1="28" x2="88" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
+                    <line x1="101" y1="28" x2="101" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
+                    <line x1="114" y1="28" x2="114" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
                     
                     {/* Top/Side Rails */}
                     <rect
@@ -250,7 +250,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       y="28"
                       width="3"
                       height="22"
-                      fill="#1e40af"
+                      fill="#E85A2A"
                     />
                   </motion.g>
                   
@@ -282,7 +282,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                   />
                 </motion.g>
                 
-                {/* Sparkle effects when hovering */}
+                {/* Sparkle effects when hovering - Gold and Orange */}
                 <AnimatePresence>
                   {isHovered && (
                     <>
@@ -300,7 +300,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                         cx="180"
                         cy="20"
                         r="2"
-                        fill="#D4AF37"
+                        fill="#FF6B35"
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
                         exit={{ opacity: 0 }}
@@ -315,6 +315,16 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                         animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1, repeat: Infinity, delay: 0.6 }}
+                      />
+                      <motion.circle
+                        cx="280"
+                        cy="18"
+                        r="2"
+                        fill="#FF6B35"
+                        initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1, repeat: Infinity, delay: 0.9 }}
                       />
                     </>
                   )}
@@ -332,7 +342,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-gold text-sm font-bold uppercase tracking-wide"
+            className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-construction-orange text-sm font-bold uppercase tracking-wide orange-glow"
           >
             Click to roll!
           </motion.div>

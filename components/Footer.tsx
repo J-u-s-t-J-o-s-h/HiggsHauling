@@ -4,19 +4,44 @@ import Image from 'next/image'
 
 export default function Footer() {
   return (
-    <footer className="bg-matte-black border-t-2 border-gold">
+    <footer className="bg-matte-black border-t-4 border-t-gold relative">
+      {/* Orange accent line */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-construction-orange"></div>
       <div className="container-custom py-12">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo and Tagline */}
           <div className="flex flex-col items-center md:items-start">
-            <Image
-              src="/logo.png"
-              alt="Higgs Hauling Logo"
-              width={250}
-              height={80}
-              className="mb-4"
-            />
+            <div className="relative mb-4">
+              {/* Warm amber glow for footer logo */}
+              <div 
+                className="absolute inset-0 opacity-50"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(255, 184, 77, 0.5) 0%, rgba(255, 184, 77, 0.3) 40%, transparent 65%)',
+                  filter: 'blur(30px)',
+                  transform: 'scale(1.3)'
+                }}
+              />
+              <div 
+                className="absolute inset-0 opacity-40 animate-pulse"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(255, 212, 102, 0.4) 0%, transparent 60%)',
+                  filter: 'blur(35px)',
+                  transform: 'scale(1.4)',
+                  animationDuration: '3s'
+                }}
+              />
+              <Image
+                src="/logo.png"
+                alt="Higgs Hauling Logo"
+                width={250}
+                height={80}
+                className="relative z-10"
+                style={{
+                  filter: 'drop-shadow(0 0 30px rgba(255, 184, 77, 0.6)) drop-shadow(0 0 40px rgba(255, 212, 102, 0.4))'
+                }}
+              />
+            </div>
             <p className="text-gray-400 text-sm text-center md:text-left">
               Mission-driven service. On time. Every time.
             </p>
@@ -27,22 +52,22 @@ export default function Footer() {
             <h3 className="text-gold font-bold uppercase tracking-wide mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="#services" className="hover:text-gold transition-colors">
+                <a href="/#services" className="hover:text-gold transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-gold transition-colors">
+                <a href="/#about" className="hover:text-gold transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-gold transition-colors">
+                <a href="/#faq" className="hover:text-gold transition-colors">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-gold transition-colors">
+                <a href="/#contact" className="hover:text-gold transition-colors">
                   Get a Quote
                 </a>
               </li>
@@ -54,8 +79,8 @@ export default function Footer() {
             <h3 className="text-gold font-bold uppercase tracking-wide mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a href="tel:+15555551234" className="hover:text-gold transition-colors">
-                  📞 (555) 555-1234
+                <a href="tel:+15802844717" className="hover:text-gold transition-colors">
+                  📞 (580) 284-4717
                 </a>
               </li>
               <li>

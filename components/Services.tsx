@@ -67,7 +67,7 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
       className={`card relative ${service.popular ? 'border-gold' : ''}`}
     >
       {service.popular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gold text-matte-black px-4 py-1 rounded-sm text-sm font-bold uppercase tracking-wide">
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-construction-orange text-white px-4 py-1 rounded-sm text-sm font-bold uppercase tracking-wide shadow-lg shadow-construction-orange/50">
           Most Popular
         </div>
       )}
@@ -103,8 +103,13 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="services" className="section-padding bg-matte-black">
-      <div className="container-custom">
+    <section id="services" className="section-padding bg-matte-black relative overflow-hidden">
+      {/* Bold orange accent orbs */}
+      <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-construction-orange/[0.1] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
+      <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-construction-orange-light/[0.08] rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gold/[0.05] rounded-full blur-3xl" />
+      
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
           ref={ref}
@@ -116,7 +121,10 @@ export default function Services() {
           <h2 className="heading-secondary text-white mb-4">
             Our <span className="text-gold">Services</span>
           </h2>
-          <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
+          <div className="flex gap-2 justify-center mx-auto mb-6">
+            <div className="w-12 h-1 bg-gold"></div>
+            <div className="w-12 h-1 bg-construction-orange"></div>
+          </div>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
             Choose the right dumpster size for your project. We serve Lawton, Oklahoma and surrounding areas 
             with flexible rental terms and professional service.

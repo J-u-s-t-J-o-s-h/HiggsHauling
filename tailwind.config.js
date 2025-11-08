@@ -12,6 +12,11 @@ module.exports = {
         'dark-gray': '#1a1a1a',
         'gold': '#D4AF37',
         'gold-dark': '#B8960F',
+        'gold-bright': '#ffd466',
+        'gold-amber': '#ffb84d',
+        'construction-orange': '#FF6B35',
+        'construction-orange-dark': '#E85A2A',
+        'construction-orange-light': '#FF8C42',
       },
       fontFamily: {
         sans: ['var(--font-sans)'],
@@ -23,6 +28,7 @@ module.exports = {
         'fade-in': 'fadeIn 0.8s ease-in-out',
         'slide-up': 'slideUp 0.6s ease-out',
         'glow': 'glow 2s ease-in-out infinite',
+        'pulse': 'pulse 4s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -36,6 +42,10 @@ module.exports = {
         glow: {
           '0%, 100%': { boxShadow: '0 0 20px rgba(212, 175, 55, 0.3)' },
           '50%': { boxShadow: '0 0 30px rgba(212, 175, 55, 0.6)' },
+        },
+        pulse: {
+          '0%, 100%': { opacity: '0.3' },
+          '50%': { opacity: '0.5' },
         },
       },
     },

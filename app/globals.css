@@ -7,6 +7,11 @@
   --color-dark-gray: #1a1a1a;
   --color-gold: #D4AF37;
   --color-gold-dark: #B8960F;
+  --color-gold-bright: #ffd466; /* Brighter gold for better contrast */
+  --color-gold-amber: #ffb84d; /* Warm amber for glows and accents */
+  --color-construction-orange: #FF6B35;
+  --color-construction-orange-dark: #E85A2A;
+  --color-construction-orange-light: #FF8C42;
 }
 
 * {
@@ -20,12 +25,30 @@ html {
 }
 
 body {
-  background-color: var(--color-matte-black);
+  /* Subtle gradient from darker top to slightly lighter bottom for depth */
+  background: linear-gradient(to bottom, #0d0d0d 0%, #1a1a1a 100%);
+  background-attachment: fixed;
   color: white;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Optional: Subtle noise texture overlay for added depth (3% opacity) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 @layer utilities {
@@ -34,11 +57,31 @@ body {
   }
   
   .gold-glow {
-    text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    text-shadow: 0 0 20px rgba(255, 184, 77, 0.5);
   }
   
   .gold-glow-strong {
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.8);
+    text-shadow: 0 0 30px rgba(255, 184, 77, 0.8);
+  }
+  
+  .orange-glow {
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
+  }
+  
+  .orange-glow-strong {
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.8);
+  }
+}
+
+/* Ambient animation for cinematic depth in hero */
+@keyframes ambient-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(30px, -20px) scale(1.1);
+    opacity: 0.25;
   }
 }
 

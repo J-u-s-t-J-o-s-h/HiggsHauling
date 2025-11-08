@@ -81,15 +81,20 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="section-padding bg-matte-black relative overflow-hidden">
-      {/* Decorative grid pattern */}
+      {/* Decorative grid pattern with orange accents */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-[0.08]"
         style={{
-          backgroundImage: `linear-gradient(rgba(212, 175, 55, 0.3) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(212, 175, 55, 0.3) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(212, 175, 55, 0.4) 1.5px, transparent 1.5px),
+                           linear-gradient(90deg, rgba(255, 107, 53, 0.4) 1.5px, transparent 1.5px)`,
           backgroundSize: '50px 50px'
         }}
       />
+      
+      {/* Bold orange accent orbs */}
+      <div className="absolute top-1/4 right-1/3 w-[600px] h-[600px] bg-construction-orange/[0.12] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
+      <div className="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] bg-construction-orange-light/[0.09] rounded-full blur-3xl" />
+      <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-gold/[0.06] rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -102,7 +107,10 @@ export default function ContactForm() {
           <h2 className="heading-secondary text-white mb-4">
             Get Your <span className="text-gold">Free Estimate</span>
           </h2>
-          <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
+          <div className="flex gap-2 justify-center mx-auto mb-6">
+            <div className="w-12 h-1 bg-gold"></div>
+            <div className="w-12 h-1 bg-construction-orange"></div>
+          </div>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Ready to get started? Fill out the form below and we'll get back to you with a quote within 24 hours.
           </p>
@@ -367,8 +375,8 @@ export default function ContactForm() {
           >
             <p className="text-gray-400 text-sm mb-4">Or contact us directly:</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gold">
-              <a href="tel:+15555551234" className="hover:text-gold-dark transition-colors">
-                📞 (555) 555-1234
+              <a href="tel:+15802844717" className="hover:text-gold-dark transition-colors">
+                📞 (580) 284-4717
               </a>
               <a href="mailto:higgshauling2024@gmail.com" className="hover:text-gold-dark transition-colors">
                 ✉️ higgshauling2024@gmail.com
