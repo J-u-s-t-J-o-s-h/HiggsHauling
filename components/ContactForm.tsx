@@ -222,10 +222,9 @@ export default function ContactForm() {
                            focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
                 >
                   <option value="">Select a size</option>
-                  <option value="10-yard">10 Yard</option>
-                  <option value="20-yard">20 Yard (Most Popular)</option>
-                  <option value="30-yard">30 Yard</option>
-                  <option value="40-yard">40 Yard</option>
+                  <option value="13-yard">13 Yard</option>
+                  <option value="15-yard">15 Yard (Most Popular)</option>
+                  <option value="20-yard">20 Yard</option>
                   <option value="not-sure">Not Sure - Need Help</option>
                 </select>
                 {errors.dumpsterSize && (
