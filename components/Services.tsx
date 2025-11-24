@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
+const BOOKING_URL = 'https://app.icans.ai/customer-portal/higgs-hauling-llc/book/'
+
 const dumpsterSizes = [
   {
     size: '13 Yard',
@@ -63,7 +65,7 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className={`card relative ${service.popular ? 'border-gold' : ''}`}
+      className={`card relative flex flex-col ${service.popular ? 'border-gold' : ''}`}
     >
       {service.popular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-construction-orange text-white px-4 py-1 rounded-sm text-sm font-bold uppercase tracking-wide shadow-lg shadow-construction-orange/50">
@@ -72,7 +74,7 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
       )}
       <h3 className="heading-tertiary text-gold mb-2">{service.size}</h3>
       <p className="text-gray-400 text-sm mb-4">{service.dimensions}</p>
-      <div className="space-y-3 text-gray-300">
+      <div className="space-y-3 text-gray-300 mb-6 flex-grow">
         <div className="bg-dark-gray/50 p-3 rounded">
           <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">1-3 Day Price</p>
           <p className="text-gold font-bold text-2xl">{service.price1to3}</p>
@@ -93,6 +95,22 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
           <span className="text-white font-semibold">Ideal for:</span> {service.ideal}
         </p>
       </div>
+
+      {/* Reserve Button */}
+      <a
+        href={BOOKING_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full"
+      >
+        <motion.button
+          className="w-full btn-primary py-3 text-sm uppercase tracking-wide font-bold"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          Reserve Now
+        </motion.button>
+      </a>
     </motion.div>
   )
 }
@@ -107,7 +125,7 @@ export default function Services() {
       <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-construction-orange/[0.1] rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }} />
       <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-construction-orange-light/[0.08] rounded-full blur-3xl" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gold/[0.05] rounded-full blur-3xl" />
-      
+
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -125,7 +143,7 @@ export default function Services() {
             <div className="w-12 h-1 bg-construction-orange"></div>
           </div>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Choose the right dumpster size for your project. We serve Lawton, Oklahoma and surrounding areas 
+            Choose the right dumpster size for your project. We serve Lawton, Oklahoma and surrounding areas
             with flexible rental terms and professional service.
           </p>
         </motion.div>

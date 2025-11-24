@@ -11,8 +11,11 @@ const navigationItems = [
   { name: 'About', href: '/#about', id: 'about' },
   { name: 'Areas', href: '/#service-areas', id: 'service-areas' },
   { name: 'FAQ', href: '/#faq', id: 'faq' },
-  { name: 'Contact', href: '/#contact', id: 'contact' },
+  // Removed Contact from main nav, moved to footer/secondary
 ]
+
+const PORTAL_LOGIN_URL = 'https://app.icans.ai/customer-portal/higgs-hauling-llc/auth/login/'
+const BOOKING_URL = 'https://app.icans.ai/customer-portal/higgs-hauling-llc/book/'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -44,18 +47,6 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const offsetTop = sectionId === 'hero' ? 0 : element.offsetTop - 80
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      })
-    }
-    setIsOpen(false)
-  }
 
   return (
     <motion.nav
@@ -123,16 +114,30 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
-          <Link href="/#contact" className="hidden md:block">
-            <motion.div
-              className="btn-secondary text-sm lg:text-base px-6 lg:px-8 py-2 lg:py-2.5 flex-shrink-0 inline-block"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <a 
+              href={PORTAL_LOGIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-gold font-bold uppercase tracking-wide text-sm transition-colors"
             >
-              Get Quote
-            </motion.div>
-          </Link>
+              Customer Login
+            </a>
+            <a 
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.div
+                className="btn-secondary text-sm lg:text-base px-6 lg:px-8 py-2 lg:py-2.5 flex-shrink-0 inline-block"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Order Online
+              </motion.div>
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <motion.button
@@ -182,16 +187,33 @@ export default function Navigation() {
                     </motion.div>
                   </Link>
                 ))}
-                <Link href="/#contact" onClick={() => setIsOpen(false)}>
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: navigationItems.length * 0.1 }}
-                    className="w-full mt-4 btn-primary text-sm inline-block text-center"
+                
+                <div className="border-t border-gray-800 my-2 pt-2">
+                  <a 
+                    href={PORTAL_LOGIN_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                    className="block w-full text-left py-3 px-4 font-bold uppercase tracking-wide text-sm text-white hover:text-gold"
                   >
-                    Get Quote
-                  </motion.div>
-                </Link>
+                    Customer Login
+                  </a>
+                  <a 
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: navigationItems.length * 0.1 }}
+                      className="w-full mt-2 btn-primary text-sm inline-block text-center"
+                    >
+                      Order Online
+                    </motion.div>
+                  </a>
+                </div>
               </div>
             </motion.div>
           )}

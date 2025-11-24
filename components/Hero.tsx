@@ -4,38 +4,35 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import DumpsterButton from './DumpsterButton'
 
-export default function Hero() {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact')
-    contactSection?.scrollIntoView({ behavior: 'smooth' })
-  }
+const BOOKING_URL = 'https://app.icans.ai/customer-portal/higgs-hauling-llc/book/'
 
+export default function Hero() {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background - Clean, Warm, and Professional */}
       <div className="absolute inset-0 z-0">
         {/* Base gradient matching body background for consistency */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] via-[#0f0f0f] to-[#1a1a1a]" />
-        
+
         {/* Warm amber spotlight for logo area - brighter and warmer */}
-        <div 
-          className="absolute inset-0" 
+        <div
+          className="absolute inset-0"
           style={{
             background: 'radial-gradient(ellipse 900px 600px at center 25%, rgba(255, 184, 77, 0.08) 0%, rgba(255, 184, 77, 0.04) 40%, transparent 70%)'
           }}
         />
-        
+
         {/* Ambient animated light gradient for cinematic depth */}
-        <div 
+        <div
           className="absolute inset-0 opacity-30"
           style={{
             background: 'radial-gradient(ellipse 1200px 800px at 30% 40%, rgba(255, 212, 102, 0.05) 0%, transparent 60%)',
             animation: 'ambient-drift 8s ease-in-out infinite alternate'
           }}
         />
-        
+
         {/* Subtle grid pattern - minimal and clean with amber tone */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage: `
@@ -46,7 +43,7 @@ export default function Hero() {
             backgroundPosition: 'center center'
           }}
         />
-        
+
         {/* Bottom vignette for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0d0d0d]/70" />
       </div>
@@ -61,7 +58,7 @@ export default function Hero() {
           {/* Logo */}
           <div className="mb-8 flex justify-center relative">
             {/* Brighter amber halo with increased blur for warmth */}
-            <div 
+            <div
               className="absolute inset-0 opacity-70"
               style={{
                 background: 'radial-gradient(ellipse at center, rgba(255, 184, 77, 0.9) 0%, rgba(255, 184, 77, 0.5) 35%, transparent 65%)',
@@ -70,7 +67,7 @@ export default function Hero() {
               }}
             />
             {/* Secondary warm glow layer with animation */}
-            <div 
+            <div
               className="absolute inset-0 opacity-60 animate-pulse"
               style={{
                 background: 'radial-gradient(ellipse at center, rgba(255, 212, 102, 0.8) 0%, rgba(255, 184, 77, 0.4) 40%, transparent 70%)',
@@ -80,7 +77,7 @@ export default function Hero() {
               }}
             />
             {/* Subtle accent glow */}
-            <div 
+            <div
               className="absolute inset-0 opacity-50"
               style={{
                 background: 'radial-gradient(circle at center, rgba(255, 200, 87, 0.7) 0%, transparent 55%)',
@@ -110,9 +107,27 @@ export default function Hero() {
           </motion.p>
 
           {/* CTA Button with Dumpster Animation */}
-          <div className="mb-20 md:mb-24">
-            <DumpsterButton onClick={scrollToContact} />
+          <div className="mb-8 md:mb-10">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+              <DumpsterButton onClick={() => { }} />
+            </a>
           </div>
+
+          {/* Guest Checkout Text */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-gold text-sm uppercase tracking-wide transition-colors"
+            >
+              Continue as Guest &rarr;
+            </a>
+          </motion.div>
         </motion.div>
       </div>
     </section>

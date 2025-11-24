@@ -50,7 +50,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
               transition={{ duration: 0.3 }}
               className="btn-primary text-lg md:text-xl"
             >
-              Get a Quote
+              Rent a Dumpster
             </motion.div>
           ) : (
             <motion.div
@@ -69,17 +69,17 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                 className="drop-shadow-[0_0_20px_rgba(255,107,53,0.6)] max-h-32 sm:max-h-40"
               >
                 {/* Complete Scene - Truck Movement */}
-                 <motion.g
-                   initial={{ x: 80 }}
-                   animate={{
-                     x: isClicked ? [80, 80, 80, 80, 120, 120, 80, 80, -150] : 80
-                   }}
-                   transition={{
-                     duration: 4.5,
-                     times: [0, 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.75, 1],
-                     ease: "easeInOut"
-                   }}
-                 >
+                <motion.g
+                  initial={{ x: 80 }}
+                  animate={{
+                    x: isClicked ? [80, 80, 80, 80, 120, 120, 80, 80, -150] : 80
+                  }}
+                  transition={{
+                    duration: 4.5,
+                    times: [0, 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.75, 1],
+                    ease: "easeInOut"
+                  }}
+                >
                   {/* Truck */}
                   <g>
                     {/* Truck Cab */}
@@ -112,7 +112,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       height="12"
                       fill="#D4AF37"
                     />
-                    
+
                     {/* Truck Chassis/Bed */}
                     <rect
                       x="45"
@@ -123,7 +123,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       stroke="#D4AF37"
                       strokeWidth="2"
                     />
-                    
+
                     {/* Hydraulic Lift System - animates with bed tilt */}
                     <motion.g
                       initial={{ opacity: 0, rotate: 0 }}
@@ -158,22 +158,22 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                         strokeLinecap="round"
                       />
                     </motion.g>
-                    
+
                     {/* Truck Wheels */}
                     <circle cx="25" cy="72" r="7" fill="#1a1a1a" stroke="#D4AF37" strokeWidth="2" />
                     <circle cx="25" cy="72" r="3" fill="#D4AF37" />
-                    <motion.circle 
-                      cx="25" 
-                      cy="72" 
-                      r="3" 
+                    <motion.circle
+                      cx="25"
+                      cy="72"
+                      r="3"
                       fill="#D4AF37"
                       animate={isClicked ? { rotate: 360 } : {}}
                       transition={{ duration: 4, ease: "linear" }}
                     />
-                    
+
                     <circle cx="90" cy="72" r="7" fill="#1a1a1a" stroke="#D4AF37" strokeWidth="2" />
                     <circle cx="90" cy="72" r="3" fill="#D4AF37" />
-                    
+
                     {/* Company Logo on truck */}
                     <text
                       x="65"
@@ -186,7 +186,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       HIGGS
                     </text>
                   </g>
-                  
+
                   {/* Dumpster - starts ON truck, drops off BEHIND truck (to the right), gets picked up again */}
                   <motion.g
                     initial={{ rotate: 0, x: 0, y: 0 }}
@@ -214,14 +214,14 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       strokeWidth="2"
                       rx="1"
                     />
-                    
+
                     {/* Container Ribs - vertical when lying flat */}
                     <line x1="62" y1="28" x2="62" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
                     <line x1="75" y1="28" x2="75" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
                     <line x1="88" y1="28" x2="88" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
                     <line x1="101" y1="28" x2="101" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
                     <line x1="114" y1="28" x2="114" y2="50" stroke="#E85A2A" strokeWidth="1.5" />
-                    
+
                     {/* Top/Side Rails */}
                     <rect
                       x="50"
@@ -239,11 +239,11 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       fill="#D4AF37"
                       rx="0.5"
                     />
-                    
+
                     {/* Hook/Chain Points at rear */}
                     <circle cx="120" cy="28" r="2.5" fill="#FFD700" stroke="#D4AF37" strokeWidth="1" />
                     <circle cx="120" cy="50" r="2.5" fill="#FFD700" stroke="#D4AF37" strokeWidth="1" />
-                    
+
                     {/* Front end detail */}
                     <rect
                       x="48"
@@ -253,7 +253,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       fill="#E85A2A"
                     />
                   </motion.g>
-                  
+
                   {/* Ground Shadows */}
                   {/* Truck shadow - moves with truck */}
                   <motion.ellipse
@@ -263,7 +263,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                     ry="4"
                     fill="rgba(0,0,0,0.3)"
                   />
-                  
+
                   {/* Dumpster shadow - starts on truck, follows dumpster to the right behind truck */}
                   <motion.ellipse
                     initial={{ cx: 88, cy: 76, rx: 38, ry: 3 }}
@@ -281,7 +281,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                     fill="rgba(0,0,0,0.3)"
                   />
                 </motion.g>
-                
+
                 {/* Sparkle effects when hovering - Gold and Orange */}
                 <AnimatePresence>
                   {isHovered && (
