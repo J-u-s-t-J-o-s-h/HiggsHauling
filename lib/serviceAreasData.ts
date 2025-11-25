@@ -173,6 +173,29 @@ export const serviceAreas: ServiceArea[] = [
     ],
     image: '/placeholder-walters.jpg',
   },
+  {
+    name: 'Elgin, OK',
+    slug: 'elgin',
+    description: 'Reliable dumpster rentals for Elgin residents and businesses. Serving the growing community with fast, professional waste removal.',
+    fullDescription: 'Elgin is a thriving community just east of Lawton along Highway 277. We provide dependable dumpster rental services for residential projects, new construction, and commercial developments. As the area continues to grow, we\'re here to support your cleanup and waste management needs.',
+    population: '~3,200',
+    highlights: [
+      'New construction support',
+      'Residential developments',
+      'Growing community focused',
+      'Highway 277 corridor',
+      'Fast delivery times',
+    ],
+    servicesOffered: [
+      '13-Yard Dumpsters',
+      '15-Yard Dumpsters',
+      '20-Yard Dumpsters',
+      'New home construction',
+      'Residential cleanouts',
+      'Commercial projects',
+    ],
+    image: '/placeholder-elgin.jpg',
+  },
 ]
 
 // Helper function to get area by slug
