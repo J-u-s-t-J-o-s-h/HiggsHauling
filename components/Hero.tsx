@@ -108,12 +108,13 @@ export default function Hero() {
 
           {/* CTA Button with Dumpster Animation */}
           <div className="mb-8 md:mb-10">
-            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-              <DumpsterButton onClick={() => { }} />
-            </a>
+            <DumpsterButton onClick={() => {
+              // Open booking URL after animation completes (delay is handled in DumpsterButton)
+              window.open(BOOKING_URL, '_blank', 'noopener,noreferrer')
+            }} />
           </div>
 
-          {/* Guest Checkout Text */}
+          {/* Secondary CTA Text */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -125,7 +126,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gold text-sm uppercase tracking-wide transition-colors"
             >
-              Continue as Guest &rarr;
+              View Pricing &amp; Availability &rarr;
             </a>
           </motion.div>
         </motion.div>

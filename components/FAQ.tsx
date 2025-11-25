@@ -8,7 +8,7 @@ import { useRef } from 'react'
 const faqs = [
   {
     question: 'What size dumpster do I need?',
-    answer: 'It depends on your project! A 10-yard dumpster works great for small cleanouts and yard waste. 20-yard is our most popular for medium projects like roofing or flooring removal. 30-yard fits large renovations, and 40-yard handles major construction or commercial projects. Not sure? Give us a call and we\'ll help you choose the right size!'
+    answer: 'It depends on your project! Our 13-yard dumpster works great for small cleanouts, minor renovations, and yard waste. The 15-yard is our most popular choice for medium projects like bathroom remodels. Our 20-yard handles larger jobs like roofing, flooring removal, and major cleanouts. Not sure? Give us a call and we\'ll help you choose the right size!'
   },
   {
     question: 'How long can I keep the dumpster?',

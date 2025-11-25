@@ -36,7 +36,7 @@ export default function Footer() {
                 alt="Higgs Hauling Logo"
                 width={250}
                 height={80}
-                className="relative z-10"
+                className="relative z-10 w-auto h-auto"
                 style={{
                   filter: 'drop-shadow(0 0 30px rgba(255, 184, 77, 0.6)) drop-shadow(0 0 40px rgba(255, 212, 102, 0.4))'
                 }}
