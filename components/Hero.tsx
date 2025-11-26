@@ -109,8 +109,9 @@ export default function Hero() {
           {/* CTA Button with Dumpster Animation */}
           <div className="mb-8 md:mb-10">
             <DumpsterButton onClick={() => {
-              // Open booking URL after animation completes (delay is handled in DumpsterButton)
-              window.open(BOOKING_URL, '_blank', 'noopener,noreferrer')
+              // Redirect to booking URL after animation completes
+              // Using location.href instead of window.open to avoid popup blockers on mobile
+              window.location.href = BOOKING_URL
             }} />
           </div>
 
