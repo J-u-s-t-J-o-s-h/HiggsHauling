@@ -66,8 +66,19 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                 height="auto"
                 viewBox="0 0 320 120"
                 preserveAspectRatio="xMidYMid meet"
-                className="drop-shadow-[0_0_20px_rgba(255,107,53,0.6)] max-h-32 sm:max-h-40"
+                className="max-h-32 sm:max-h-40"
+                style={{ willChange: 'transform' }}
               >
+                {/* SVG Glow Filter - renders better than CSS drop-shadow on mobile */}
+                <defs>
+                  <filter id="dumpster-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
                 {/* Complete Scene - Truck Movement */}
                 <motion.g
                   initial={{ x: 80 }}
@@ -202,6 +213,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       ease: "easeOut"
                     }}
                     style={{ originX: '130px', originY: '70px' }}
+                    filter="url(#dumpster-glow)"
                   >
                     {/* Dumpster Container - lying flat on truck bed - CONSTRUCTION ORANGE! */}
                     <rect
