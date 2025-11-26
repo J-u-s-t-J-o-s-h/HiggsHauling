@@ -42,7 +42,7 @@ export default function Footer() {
                 }}
               />
             </div>
-            <p className="text-gray-400 text-sm text-center md:text-left">
+            <p className="text-gray-300 text-sm text-center md:text-left">
               Mission-driven service. On time. Every time.
             </p>
           </div>
@@ -50,7 +50,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h3 className="text-gold font-bold uppercase tracking-wide mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-300">
               <li>
                 <a href="/#services" className="hover:text-gold transition-colors">
                   Services
@@ -77,7 +77,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div className="text-center md:text-left">
             <h3 className="text-gold font-bold uppercase tracking-wide mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-300">
               <li>
                 <a href="tel:+15802844717" className="hover:text-gold transition-colors">
                   📞 (580) 284-4717
@@ -88,7 +88,7 @@ export default function Footer() {
                   ✉️ higgshauling2024@gmail.com
                 </a>
               </li>
-              <li className="text-gray-400">
+              <li className="text-gray-300">
                 📍 Lawton, Oklahoma
               </li>
             </ul>
@@ -137,7 +137,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="text-center pt-8 border-t border-gold/20">
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-300 text-sm">
             &copy; {new Date().getFullYear()} Higgs Hauling. All Rights Reserved.
           </p>
           <p className="text-gray-500 text-xs mt-2">

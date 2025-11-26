@@ -98,7 +98,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="text-gray-300 pb-6 leading-relaxed">
+            <p className="text-gray-200 pb-6 leading-relaxed">
               {faq.answer}
             </p>
           </motion.div>
@@ -134,7 +134,7 @@ export default function FAQ() {
             <div className="w-12 h-1 bg-gold"></div>
             <div className="w-12 h-1 bg-construction-orange"></div>
           </div>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-200 text-lg max-w-3xl mx-auto">
             Got questions? We've got answers. Here are the most common questions our customers ask.
           </p>
         </motion.div>

@@ -73,14 +73,14 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
         </div>
       )}
       <h3 className="heading-tertiary text-gold mb-2">{service.size}</h3>
-      <p className="text-gray-400 text-sm mb-4">{service.dimensions}</p>
+      <p className="text-gray-300 text-sm mb-4">{service.dimensions}</p>
       <div className="space-y-3 text-gray-300 mb-6 flex-grow">
         <div className="bg-dark-gray/50 p-3 rounded">
-          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">1-3 Day Price</p>
+          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">1-3 Day Price</p>
           <p className="text-gold font-bold text-2xl">{service.price1to3}</p>
         </div>
         <div className="bg-dark-gray/50 p-3 rounded">
-          <p className="text-xs text-gray-400 uppercase tracking-wide mb-1">4-7 Day Price</p>
+          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">4-7 Day Price</p>
           <p className="text-gold font-bold text-2xl">{service.price4to7}</p>
         </div>
         <div className="pt-2 border-t border-gold/20">
@@ -142,7 +142,7 @@ export default function Services() {
             <div className="w-12 h-1 bg-gold"></div>
             <div className="w-12 h-1 bg-construction-orange"></div>
           </div>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+          <p className="text-gray-200 text-lg max-w-3xl mx-auto">
             Choose the right dumpster size for your project. We serve Lawton, Oklahoma and surrounding areas
             with flexible rental terms and professional service.
           </p>
@@ -169,7 +169,7 @@ export default function Services() {
               <h3 className="text-xl font-bold text-gold mb-2 uppercase tracking-wide">
                 {feature.title}
               </h3>
-              <p className="text-gray-300">{feature.description}</p>
+              <p className="text-gray-200">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -181,7 +181,7 @@ export default function Services() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <p className="text-gray-400 text-sm uppercase tracking-wide">
+          <p className="text-gray-300 text-sm uppercase tracking-wide">
             Proudly serving Lawton, Oklahoma and surrounding areas • Flexible rental terms • Call for custom quotes
           </p>
         </motion.div>

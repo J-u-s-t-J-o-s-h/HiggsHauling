@@ -111,7 +111,7 @@ export default function ContactForm() {
             <div className="w-12 h-1 bg-gold"></div>
             <div className="w-12 h-1 bg-construction-orange"></div>
           </div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto">
             Ready to get started? Fill out the form below and we'll get back to you with a quote within 24 hours.
           </p>
         </motion.div>
@@ -311,7 +311,7 @@ export default function ContactForm() {
                     />
                   )}
                 />
-                <p className="mt-1 text-xs text-gray-400">Leave blank if flexible pickup date</p>
+                <p className="mt-1 text-xs text-gray-300">Leave blank if flexible pickup date</p>
               </div>
             </div>
 
@@ -372,7 +372,7 @@ export default function ContactForm() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 text-center"
           >
-            <p className="text-gray-400 text-sm mb-4">Or contact us directly:</p>
+            <p className="text-gray-300 text-sm mb-4">Or contact us directly:</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-gold">
               <a href="tel:+15802844717" className="hover:text-gold-dark transition-colors">
                 📞 (580) 284-4717

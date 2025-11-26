@@ -49,7 +49,7 @@ export default function About() {
               <div className="w-12 h-1 bg-construction-orange"></div>
             </div>
             
-            <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+            <div className="space-y-6 text-gray-200 text-lg leading-relaxed">
               <p>
                 Higgs Hauling is a <strong className="text-gold">veteran-owned and operated</strong> roll-off 
                 dumpster rental company serving Lawton, Oklahoma and the surrounding areas. Founded on the principles 
@@ -79,7 +79,7 @@ export default function About() {
               <p className="text-2xl md:text-3xl font-bold text-gold italic leading-relaxed">
                 "Mission-driven service.<br />On time. Every time."
               </p>
-              <p className="text-gray-400 mt-4 text-sm uppercase tracking-wide">
+              <p className="text-gray-300 mt-4 text-sm uppercase tracking-wide">
                 — Our Promise to You
               </p>
             </motion.div>
@@ -105,7 +105,7 @@ export default function About() {
                   <h3 className="text-2xl font-bold text-gold mb-3 uppercase tracking-wide">
                     {value.title}
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-gray-200 leading-relaxed">
                     {value.description}
                   </p>
                 </motion.div>
@@ -121,13 +121,13 @@ export default function About() {
             >
               <div className="text-center card">
                 <div className="text-4xl font-bold text-gold mb-2">100%</div>
-                <div className="text-sm text-gray-400 uppercase tracking-wide">
+                <div className="text-sm text-gray-300 uppercase tracking-wide">
                   Veteran Owned
                 </div>
               </div>
               <div className="text-center card">
                 <div className="text-4xl font-bold text-gold mb-2">24/7</div>
-                <div className="text-sm text-gray-400 uppercase tracking-wide">
+                <div className="text-sm text-gray-300 uppercase tracking-wide">
                   Support Available
                 </div>
               </div>

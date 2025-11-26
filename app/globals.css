@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --color-matte-black: #0a0a0a;
-  --color-dark-gray: #1a1a1a;
+  --color-matte-black: #141414; /* Lightened for better readability */
+  --color-dark-gray: #1f1f1f; /* Lightened for better readability */
   --color-gold: #D4AF37;
   --color-gold-dark: #B8960F;
   --color-gold-bright: #ffd466; /* Brighter gold for better contrast */
@@ -12,6 +12,10 @@
   --color-construction-orange: #FF6B35;
   --color-construction-orange-dark: #E85A2A;
   --color-construction-orange-light: #FF8C42;
+  /* Accessibility: Brighter text colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e5e7eb; /* Brighter than gray-400 */
+  --color-text-muted: #d1d5db; /* Brighter than gray-500 */
 }
 
 * {
@@ -25,11 +29,13 @@ html {
 }
 
 body {
-  /* Subtle gradient from darker top to slightly lighter bottom for depth */
-  background: linear-gradient(to bottom, #0d0d0d 0%, #1a1a1a 100%);
+  /* Lightened gradient for better readability while maintaining premium look */
+  background: linear-gradient(to bottom, #141414 0%, #1f1f1f 100%);
   background-attachment: fixed;
   color: white;
   font-family: var(--font-sans);
+  font-size: 17px; /* Slightly larger base font for accessibility */
+  line-height: 1.6; /* Improved line height for readability */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;

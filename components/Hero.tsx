@@ -11,8 +11,8 @@ export default function Hero() {
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background - Clean, Warm, and Professional */}
       <div className="absolute inset-0 z-0">
-        {/* Base gradient matching body background for consistency */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] via-[#0f0f0f] to-[#1a1a1a]" />
+        {/* Base gradient matching body background for consistency - lightened for accessibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141414] via-[#171717] to-[#1f1f1f]" />
 
         {/* Warm amber spotlight for logo area - brighter and warmer */}
         <div
@@ -45,7 +45,7 @@ export default function Hero() {
         />
 
         {/* Bottom vignette for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0d0d0d]/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#141414]/70" />
       </div>
 
       {/* Content */}
@@ -124,7 +124,7 @@ export default function Hero() {
               href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gold text-sm uppercase tracking-wide transition-colors"
+              className="text-gray-300 hover:text-gold text-sm uppercase tracking-wide transition-colors"
             >
               View Pricing &amp; Availability &rarr;
             </a>
