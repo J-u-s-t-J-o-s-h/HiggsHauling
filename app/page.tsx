@@ -9,6 +9,7 @@ import ServiceAreas from '@/components/ServiceAreas'
 import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
+import { FaqPageJsonLd } from '@/components/StructuredData'
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
       className="min-h-screen"
       suppressHydrationWarning
     >
+      {/* FAQPage structured data - synced with FAQ component via lib/faqData.ts */}
+      <FaqPageJsonLd />
+      
       <Navigation />
       <Hero />
       <Services />
@@ -30,4 +34,3 @@ export default function Home() {
     </motion.main>
   )
 }
-

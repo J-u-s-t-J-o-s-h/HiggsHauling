@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Bebas_Neue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { LocalBusinessJsonLd } from '@/components/StructuredData'
 import './globals.css'
 
 const inter = Inter({
@@ -17,9 +18,20 @@ const bebasNeue = Bebas_Neue({
   display: 'swap',
 })
 
+/**
+ * Global Metadata Configuration
+ * 
+ * This defines default metadata for all pages. Individual pages can override
+ * these values by exporting their own metadata or using generateMetadata.
+ * 
+ * To update site-wide title/description patterns, edit this file.
+ * For page-specific metadata, see:
+ * - Home page: inherits from this layout
+ * - Service area pages: app/service-areas/[area]/metadata.ts
+ */
 export const metadata: Metadata = {
   title: 'Higgs Hauling | Roll-Off Dumpster Rentals | Lawton OK',
-  description: 'Military-class professionalism meets reliable dumpster rental services. Veteran-owned roll-off dumpster rentals serving Lawton, Oklahoma and surrounding areas. Fast delivery, on-time service.',
+  description: 'Veteran-owned roll-off dumpster rental company serving Lawton, Oklahoma and surrounding areas. Fast delivery, on-time service, and military-class professionalism. 13, 15, and 20-yard dumpsters available.',
   keywords: [
     'dumpster rental',
     'roll-off dumpster',
@@ -35,14 +47,15 @@ export const metadata: Metadata = {
   authors: [{ name: 'Higgs Hauling' }],
   creator: 'Higgs Hauling',
   publisher: 'Higgs Hauling',
-  metadataBase: new URL('https://higgshauling.com'),
+  // Updated to match live site URL with www
+  metadataBase: new URL('https://www.higgshauling.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Higgs Hauling | Roll-Off Dumpster Rentals',
-    description: 'Mission-driven dumpster rental service. On time. Every time. Veteran-owned and operated in Lawton, Oklahoma.',
-    url: 'https://higgshauling.com',
+    description: 'Veteran-owned dumpster rental service in Lawton, OK. On time. Every time.',
+    url: 'https://www.higgshauling.com',
     siteName: 'Higgs Hauling',
     locale: 'en_US',
     type: 'website',
@@ -51,14 +64,14 @@ export const metadata: Metadata = {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Higgs Hauling Logo',
+        alt: 'Higgs Hauling - Veteran-Owned Dumpster Rentals',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Higgs Hauling | Roll-Off Dumpster Rentals',
-    description: 'Mission-driven dumpster rental service. On time. Every time.',
+    description: 'Veteran-owned dumpster rental service in Lawton, OK. On time. Every time.',
     images: ['/logo.png'],
   },
   robots: {
@@ -84,6 +97,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo.png" />
+        {/* LocalBusiness structured data for search engines - update in components/StructuredData.tsx */}
+        <LocalBusinessJsonLd />
       </head>
       <body className={inter.className}>
         {children}
@@ -93,4 +108,3 @@ export default function RootLayout({
     </html>
   )
 }
-
