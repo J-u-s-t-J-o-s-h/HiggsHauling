@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Navigation from '@/components/Navigation'
+import NavigationOptimized from '@/components/NavigationOptimized'
 import Footer from '@/components/Footer'
 import { ServiceArea, serviceAreas } from '@/lib/serviceAreasData'
 
@@ -23,7 +23,7 @@ export default function ServiceAreaContent({ area, areaSlug }: ServiceAreaConten
       className="min-h-screen"
       suppressHydrationWarning
     >
-      <Navigation />
+      <NavigationOptimized />
 
       {/* Hero Section for Area */}
       <section 
@@ -304,7 +304,7 @@ export default function ServiceAreaContent({ area, areaSlug }: ServiceAreaConten
 export function ServiceAreaNotFound() {
   return (
     <main className="min-h-screen">
-      <Navigation />
+      <NavigationOptimized />
       <section className="relative min-h-screen flex items-center justify-center section-padding">
         <div className="container-custom text-center">
           <h1 className="heading-primary mb-6" style={{ color: '#ffb84d' }}>

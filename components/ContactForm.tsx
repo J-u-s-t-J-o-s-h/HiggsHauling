@@ -112,7 +112,7 @@ export default function ContactForm() {
             <div className="w-12 h-1 bg-construction-orange"></div>
           </div>
           <p className="text-gray-200 text-lg max-w-2xl mx-auto">
-            Ready to get started? Fill out the form below and we'll get back to you with a quote within 24 hours.
+            Ready to get started? Fill out the form below and we&apos;ll get back to you with a quote within 24 hours.
           </p>
         </motion.div>
 
@@ -247,7 +247,7 @@ export default function ContactForm() {
                   <option value="1-week">1 Week</option>
                   <option value="2-weeks">2 Weeks</option>
                   <option value="1-month">1 Month</option>
-                  <option value="flexible">Flexible - Let's Discuss</option>
+                  <option value="flexible">Flexible - Let&apos;s Discuss</option>
                 </select>
                 {errors.rentalDuration && (
                   <p className="mt-1 text-sm text-red-400">{errors.rentalDuration.message}</p>
@@ -349,7 +349,7 @@ export default function ContactForm() {
                 className="bg-green-900/30 border border-green-500 text-green-400 px-4 py-3 rounded-sm"
               >
                 <p className="font-bold">Success!</p>
-                <p>Thank you for your request. We'll contact you within 24 hours with a quote.</p>
+                <p>Thank you for your request. We&apos;ll contact you within 24 hours with a quote.</p>
               </motion.div>
             )}
 

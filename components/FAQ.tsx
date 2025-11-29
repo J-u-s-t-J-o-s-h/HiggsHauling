@@ -96,7 +96,7 @@ export default function FAQ() {
             <div className="w-12 h-1 bg-construction-orange"></div>
           </div>
           <p className="text-gray-200 text-lg max-w-3xl mx-auto">
-            Got questions? We've got answers. Here are the most common questions our customers ask.
+            Got questions? We&apos;ve got answers. Here are the most common questions our customers ask.
           </p>
         </motion.div>
 

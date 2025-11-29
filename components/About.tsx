@@ -57,14 +57,14 @@ export default function About() {
               </p>
               
               <p>
-                Whether you're tackling a home renovation, managing a construction site, or handling a major 
+                Whether you&apos;re tackling a home renovation, managing a construction site, or handling a major 
                 cleanout, we provide reliable dumpster rental services with the same commitment to excellence 
                 we learned in service.
               </p>
 
               <p>
                 Our mission is simple: deliver exceptional service with precision timing and unwavering reliability. 
-                We understand the importance of keeping your project on schedule, and we're here to make waste 
+                We understand the importance of keeping your project on schedule, and we&apos;re here to make waste 
                 management the easiest part of your job.
               </p>
             </div>
@@ -77,7 +77,7 @@ export default function About() {
               className="mt-10 border-l-4 border-construction-orange pl-6 py-4 bg-matte-black/50"
             >
               <p className="text-2xl md:text-3xl font-bold text-gold italic leading-relaxed">
-                "Mission-driven service.<br />On time. Every time."
+                &quot;Mission-driven service.&quot;<br />&quot;On time. Every time.&quot;
               </p>
               <p className="text-gray-300 mt-4 text-sm uppercase tracking-wide">
                 — Our Promise to You

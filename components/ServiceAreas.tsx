@@ -171,7 +171,7 @@ export default function ServiceAreas() {
           className="text-center mt-8 sm:mt-10 md:mt-12 px-4 pt-6 border-t border-gold/10"
         >
           <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6">
-            Don't see your area listed? <span className="text-gold-amber font-semibold">Give us a call!</span> We may still be able to serve you.
+            Don&apos;t see your area listed? <span className="text-gold-amber font-semibold">Give us a call!</span> We may still be able to serve you.
           </p>
           <a 
             href="#contact" 

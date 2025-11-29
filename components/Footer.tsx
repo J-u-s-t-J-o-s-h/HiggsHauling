@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -33,7 +34,7 @@ export default function Footer() {
               />
               <Image
                 src="/logo.png"
-                alt="Higgs Hauling Logo"
+                alt="Higgs Hauling - Veteran-Owned Dumpster Rentals in Lawton, Oklahoma"
                 width={250}
                 height={80}
                 className="relative z-10 w-auto h-auto"
@@ -52,24 +53,54 @@ export default function Footer() {
             <h3 className="text-gold font-bold uppercase tracking-wide mb-4">Quick Links</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <a href="/#services" className="hover:text-gold transition-colors">
-                  Services
-                </a>
+                <Link href="/#services" className="hover:text-gold transition-colors">
+                  Dumpster Sizes & Pricing
+                </Link>
               </li>
               <li>
-                <a href="/#about" className="hover:text-gold transition-colors">
+                <Link href="/#about" className="hover:text-gold transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#faq" className="hover:text-gold transition-colors">
+                <Link href="/#faq" className="hover:text-gold transition-colors">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#contact" className="hover:text-gold transition-colors">
-                  Get a Quote
-                </a>
+                <Link href="/#contact" className="hover:text-gold transition-colors">
+                  Get a Free Quote
+                </Link>
+              </li>
+            </ul>
+            
+            {/* Service Area Links - SEO keyword-rich anchor text */}
+            <h3 className="text-gold font-bold uppercase tracking-wide mb-4 mt-6">Service Areas</h3>
+            <ul className="space-y-2 text-gray-300 text-sm">
+              <li>
+                <Link href="/service-areas/lawton" className="hover:text-gold transition-colors">
+                  Dumpster Rentals in Lawton, OK
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas/cache" className="hover:text-gold transition-colors">
+                  Dumpster Rentals in Cache, OK
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas/elgin" className="hover:text-gold transition-colors">
+                  Dumpster Rentals in Elgin, OK
+                </Link>
+              </li>
+              <li>
+                <Link href="/service-areas/medicine-park" className="hover:text-gold transition-colors">
+                  Dumpster Rentals in Medicine Park
+                </Link>
+              </li>
+              <li>
+                <Link href="/#service-areas" className="hover:text-gold transition-colors text-gold-amber">
+                  View All Service Areas →
+                </Link>
               </li>
             </ul>
           </div>
@@ -148,4 +179,3 @@ export default function Footer() {
     </footer>
   )
 }
-
