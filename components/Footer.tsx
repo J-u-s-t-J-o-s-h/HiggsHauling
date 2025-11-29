@@ -33,9 +33,10 @@ export default function Footer() {
               />
               <Image
                 src="/logo.png"
-                alt="Higgs Hauling Logo"
-                width={250}
-                height={80}
+                alt="Higgs Hauling - Veteran-Owned Dumpster Rentals"
+                width={200}
+                height={67}
+                sizes="200px"
                 className="relative z-10 w-auto h-auto"
                 style={{
                   filter: 'drop-shadow(0 0 30px rgba(255, 184, 77, 0.6)) drop-shadow(0 0 40px rgba(255, 212, 102, 0.4))'
@@ -140,7 +141,7 @@ export default function Footer() {
           <p className="text-gray-300 text-sm">
             &copy; {new Date().getFullYear()} Higgs Hauling. All Rights Reserved.
           </p>
-          <p className="text-gray-500 text-xs mt-2">
+          <p className="text-gray-400 text-xs mt-2">
             Proudly Veteran-Owned and Operated
           </p>
         </div>
