@@ -130,7 +130,7 @@ export default function Footer() {
         {/* Social Media Icons */}
         <div className="flex justify-center gap-6 mb-8 pt-8 border-t border-gold/20">
           <a
-            href="https://www.facebook.com"
+            href="https://www.facebook.com/profile.php?id=61583883958299"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 flex items-center justify-center border-2 border-gold rounded-sm 
