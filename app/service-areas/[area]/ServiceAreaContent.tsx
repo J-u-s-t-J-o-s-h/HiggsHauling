@@ -63,11 +63,11 @@ export default function ServiceAreaContent({ area, areaSlug }: ServiceAreaConten
               <Link href="/" className="text-gold-amber hover:text-gold-bright transition-colors text-sm">
                 Home
               </Link>
-              <span className="text-gray-500 mx-2">/</span>
+              <span className="text-gray-400 mx-2">/</span>
               <Link href="/#service-areas" className="text-gold-amber hover:text-gold-bright transition-colors text-sm">
                 Service Areas
               </Link>
-              <span className="text-gray-500 mx-2">/</span>
+              <span className="text-gray-400 mx-2">/</span>
               <span className="text-gray-400 text-sm">{area.name}</span>
             </div>
 

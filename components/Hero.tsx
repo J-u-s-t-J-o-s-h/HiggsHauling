@@ -87,10 +87,11 @@ export default function Hero() {
             />
             <Image
               src="/logo.png"
-              alt="Higgs Hauling Logo"
+              alt="Higgs Hauling - Roll-Off Dumpster Rentals in Lawton, Oklahoma"
               width={600}
               height={200}
               priority
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 672px"
               className="w-full max-w-2xl h-auto relative z-10 drop-shadow-[0_0_60px_rgba(255,184,77,0.9)] drop-shadow-[0_0_90px_rgba(255,212,102,0.7)]"
             />
           </div>

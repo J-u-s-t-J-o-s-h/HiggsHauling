@@ -78,10 +78,10 @@ export default function Navigation() {
                 <Image
                   src="/logo.png"
                   alt="Higgs Hauling"
-                  width={220}
-                  height={73}
+                  width={168}
+                  height={56}
+                  sizes="168px"
                   className="h-14 w-auto relative z-10"
-                  priority
                 />
               </div>
             </motion.div>
