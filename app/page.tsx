@@ -11,7 +11,7 @@
 import dynamic from 'next/dynamic'
 import NavigationOptimized from '@/components/NavigationOptimized'
 import HeroOptimized from '@/components/HeroOptimized'
-import { FaqPageJsonLd } from '@/components/StructuredData'
+import { FaqPageJsonLd, ReviewsJsonLd } from '@/components/StructuredData'
 
 // Lazy load below-the-fold components to reduce initial JS bundle
 // These use framer-motion but are loaded after initial paint
@@ -21,6 +21,10 @@ const Services = dynamic(() => import('@/components/Services'), {
 
 const About = dynamic(() => import('@/components/About'), {
   loading: () => <div className="section-padding bg-dark-gray min-h-[600px]" />,
+})
+
+const Testimonials = dynamic(() => import('@/components/Testimonials'), {
+  loading: () => <div className="section-padding bg-matte-black min-h-[600px]" />,
 })
 
 const ServiceAreas = dynamic(() => import('@/components/ServiceAreas'), {
@@ -42,8 +46,9 @@ const Footer = dynamic(() => import('@/components/Footer'), {
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* FAQPage structured data */}
+      {/* Structured data for SEO */}
       <FaqPageJsonLd />
+      <ReviewsJsonLd />
       
       {/* Critical above-the-fold content - renders immediately */}
       <NavigationOptimized />
@@ -52,6 +57,7 @@ export default function Home() {
       {/* Below-the-fold sections - lazy loaded */}
       <Services />
       <About />
+      <Testimonials />
       <ServiceAreas />
       <FAQ />
       <ContactForm />

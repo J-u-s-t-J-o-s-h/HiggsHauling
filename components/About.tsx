@@ -77,7 +77,7 @@ export default function About() {
               className="mt-10 border-l-4 border-construction-orange pl-6 py-4 bg-matte-black/50"
             >
               <p className="text-2xl md:text-3xl font-bold text-gold italic leading-relaxed">
-                &quot;Mission-driven service.&quot;<br />&quot;On time. Every time.&quot;
+                &quot;You call, we haul!&quot;
               </p>
               <p className="text-gray-300 mt-4 text-sm uppercase tracking-wide">
                 — Our Promise to You
