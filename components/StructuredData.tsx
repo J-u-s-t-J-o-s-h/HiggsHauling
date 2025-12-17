@@ -98,22 +98,26 @@ export function FaqPageJsonLd() {
  * 
  * Uses review content from lib/reviewsData.ts to stay in sync with UI.
  * Update reviews in lib/reviewsData.ts, not here.
+ * 
+ * IMPORTANT: Only renders when reviews exist (reviewCount >= 1) to avoid
+ * Google Search Console errors about invalid reviewCount values.
  */
 export function ReviewsJsonLd() {
-  // Calculate average rating
-  const averageRating = reviewsData.reduce((sum, review) => sum + review.rating, 0) / reviewsData.length
+  // Guard: Don't render if no reviews exist
+  // Google requires reviewCount to be a positive integer (>= 1)
+  const reviewCount = reviewsData.length
+  if (!Number.isInteger(reviewCount) || reviewCount < 1) {
+    return null
+  }
 
-  const reviewSchema = {
+  // Calculate average rating (safe because we know reviewsData.length >= 1)
+  const averageRating = reviewsData.reduce((sum, review) => sum + review.rating, 0) / reviewCount
+
+  // Build schema object - only include aggregateRating when we have valid reviews
+  const reviewSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Higgs Hauling',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: averageRating.toFixed(1),
-      reviewCount: reviewsData.length,
-      bestRating: '5',
-      worstRating: '1'
-    },
     review: reviewsData.map((review) => ({
       '@type': 'Review',
       author: {
@@ -129,6 +133,17 @@ export function ReviewsJsonLd() {
         worstRating: '1'
       }
     }))
+  }
+
+  // Only add aggregateRating when reviewCount >= 1 and ratingValue is valid
+  if (reviewCount >= 1 && !isNaN(averageRating) && isFinite(averageRating)) {
+    reviewSchema.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: averageRating.toFixed(1),
+      reviewCount: reviewCount,
+      bestRating: '5',
+      worstRating: '1'
+    }
   }
 
   return (
