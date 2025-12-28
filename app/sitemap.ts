@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // Home page - highest priority
     {
-      url: BASE_URL,
+      url: `${BASE_URL}/`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,

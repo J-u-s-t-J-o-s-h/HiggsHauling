@@ -49,9 +49,7 @@ export const metadata: Metadata = {
   publisher: 'Higgs Hauling',
   // Updated to match live site URL with www
   metadataBase: new URL('https://www.higgshauling.com'),
-  alternates: {
-    canonical: '/',
-  },
+
   openGraph: {
     title: 'Higgs Hauling | Roll-Off Dumpster Rentals',
     description: 'Veteran-owned dumpster rental service in Lawton, OK. On time. Every time.',
@@ -101,6 +99,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        {/* Explicit Canonical URL to enforce trailing slash */}
+        <link rel="canonical" href="https://www.higgshauling.com/" />
         {/* LocalBusiness structured data for search engines - update in components/StructuredData.tsx */}
         <LocalBusinessJsonLd />
       </head>
