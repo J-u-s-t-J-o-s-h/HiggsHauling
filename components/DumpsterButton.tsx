@@ -4,10 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
 interface DumpsterButtonProps {
-  onClick: () => void
+  onClick?: () => void
+  redirectUrl?: string
 }
 
-export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
+export default function DumpsterButton({ onClick, redirectUrl }: DumpsterButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [isClicked, setIsClicked] = useState(false)
 
@@ -21,7 +22,9 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
     // 5. Picks up dumpster
     // 6. Drives away with dumpster
     setTimeout(() => {
-      onClick()
+      if (onClick) onClick()
+      if (redirectUrl) window.location.href = redirectUrl
+
       setTimeout(() => setIsClicked(false), 1000)
     }, 5000) // Faster animation
   }
@@ -78,7 +81,15 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </filter>
+                  <radialGradient id="spotlight" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                    <stop offset="0%" stopColor="#FFD466" stopOpacity="0.1" />
+                    <stop offset="100%" stopColor="#FFD466" stopOpacity="0" />
+                  </radialGradient>
                 </defs>
+
+                {/* Spotlight Background */}
+                <ellipse cx="160" cy="60" rx="140" ry="50" fill="url(#spotlight)" />
+
                 {/* Complete Scene - Truck Movement */}
                 <motion.g
                   initial={{ x: 80 }}
@@ -99,7 +110,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       y="45"
                       width="35"
                       height="25"
-                      fill="#1a1a1a"
+                      fill="#404040"
                       stroke="#D4AF37"
                       strokeWidth="2"
                       rx="2"
@@ -130,7 +141,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       y="50"
                       width="60"
                       height="20"
-                      fill="#0a0a0a"
+                      fill="#2d2d2d"
                       stroke="#D4AF37"
                       strokeWidth="2"
                     />
@@ -171,7 +182,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                     </motion.g>
 
                     {/* Truck Wheels */}
-                    <circle cx="25" cy="72" r="7" fill="#1a1a1a" stroke="#D4AF37" strokeWidth="2" />
+                    <circle cx="25" cy="72" r="7" fill="#2d2d2d" stroke="#D4AF37" strokeWidth="2" />
                     <circle cx="25" cy="72" r="3" fill="#D4AF37" />
                     <motion.circle
                       cx="25"
@@ -182,7 +193,7 @@ export default function DumpsterButton({ onClick }: DumpsterButtonProps) {
                       transition={{ duration: 4, ease: "linear" }}
                     />
 
-                    <circle cx="90" cy="72" r="7" fill="#1a1a1a" stroke="#D4AF37" strokeWidth="2" />
+                    <circle cx="90" cy="72" r="7" fill="#2d2d2d" stroke="#D4AF37" strokeWidth="2" />
                     <circle cx="90" cy="72" r="3" fill="#D4AF37" />
 
                     {/* Company Logo on truck */}

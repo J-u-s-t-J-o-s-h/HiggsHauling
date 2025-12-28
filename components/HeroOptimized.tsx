@@ -7,8 +7,8 @@
  * - Keeps the same visual design with better Core Web Vitals
  */
 
+import DumpsterButton from '@/components/DumpsterButton'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const BOOKING_URL = 'https://app.icans.ai/customer-portal/higgs-hauling-llc/book/'
 
@@ -101,16 +101,9 @@ export default function HeroOptimized() {
           Roll-Off Dumpster Rentals in Lawton, OK
         </h1>
 
-        {/* CTA Button - Using simple link instead of complex animation on initial load */}
+        {/* CTA Button - Restored animated DumpsterButton */}
         <div className="mb-8 md:mb-10 animate-fade-in animation-delay-600">
-          <Link
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-lg md:text-xl inline-block hover:scale-105 transition-transform"
-          >
-            Rent a Dumpster
-          </Link>
+          <DumpsterButton redirectUrl={BOOKING_URL} />
         </div>
 
         {/* Secondary CTA Text */}
