@@ -3,6 +3,7 @@ import { Inter, Bebas_Neue } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { LocalBusinessJsonLd } from '@/components/StructuredData'
+import Script from 'next/script'
 import './globals.css'
 
 const inter = Inter({
@@ -108,6 +109,19 @@ export default function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1NKM6DZ5GN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-1NKM6DZ5GN');
+          `}
+        </Script>
       </body>
     </html>
   )
