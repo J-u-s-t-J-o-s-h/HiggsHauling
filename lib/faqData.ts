@@ -53,5 +53,9 @@ export const faqData: FAQItem[] = [
   {
     question: 'What makes Higgs Hauling different?',
     answer: 'We\'re a veteran-owned business committed to mission-driven service. We pride ourselves on reliability, professionalism, and treating every customer with respect. On-time delivery and pickup, transparent pricing, and exceptional customer service are our standards - every time.'
+  },
+  {
+    question: 'Do you offer military discounts?',
+    answer: 'Yes! We offer a 10% discount for all active duty military and veterans. It\'s our way of saying thank you for your service.'
   }
 ]

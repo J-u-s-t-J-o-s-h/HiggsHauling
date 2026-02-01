@@ -77,11 +77,11 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
       <div className="space-y-3 text-gray-300 mb-6 flex-grow">
         <div className="bg-dark-gray/50 p-3 rounded">
           <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">1-3 Day Price</p>
-          <p className="text-gold font-bold text-2xl">{service.price1to3}</p>
+          <p className="text-gold font-bold text-2xl">{service.price1to3} <span className="text-sm font-normal text-gray-400">+ tax</span></p>
         </div>
         <div className="bg-dark-gray/50 p-3 rounded">
           <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">4-7 Day Price</p>
-          <p className="text-gold font-bold text-2xl">{service.price4to7}</p>
+          <p className="text-gold font-bold text-2xl">{service.price4to7} <span className="text-sm font-normal text-gray-400">+ tax</span></p>
         </div>
         <div className="pt-2 border-t border-gold/20">
           <p className="text-sm">
@@ -143,9 +143,13 @@ export default function Services() {
             <div className="w-12 h-1 bg-construction-orange"></div>
           </div>
           <p className="text-gray-200 text-lg max-w-3xl mx-auto">
-            Choose the right dumpster size for your project. We serve Lawton, Oklahoma and surrounding areas
-            with flexible rental terms and professional service.
+            Choose the right dumpster size for your project. We serve Lawton, Oklahoma and surrounding areas.
           </p>
+          <div className="mt-6 inline-block bg-dark-gray/80 border border-gold/30 rounded-lg px-6 py-3">
+            <p className="text-gold font-bold uppercase tracking-wide flex items-center gap-2">
+              <span>🪖</span> 10% Military Discount for Active Duty & Veterans
+            </p>
+          </div>
         </motion.div>
 
         {/* Dumpster Size Cards */}
