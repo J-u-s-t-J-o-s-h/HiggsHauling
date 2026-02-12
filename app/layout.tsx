@@ -122,6 +122,10 @@ export default function RootLayout({
             gtag('config', 'G-1NKM6DZ5GN');
           `}
         </Script>
+        <Script
+          src="https://www.rapidscansecure.com/siteseal/siteseal.js?code=116,4151F4A3A6E41C88B5630203230BCF4FC7558F91"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

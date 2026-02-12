@@ -175,6 +175,29 @@ export default function Footer() {
           <p className="text-gray-400 text-xs mt-2">
             Proudly Veteran-Owned and Operated
           </p>
+          <a
+            href="#"
+            style={{ textDecoration: 'none' }}
+            onClick={(e) => {
+              e.preventDefault()
+              window.open(
+                'https://www.rapidscansecure.com/siteseal/Verify.aspx?code=116,4151F4A3A6E41C88B5630203230BCF4FC7558F91',
+                'Verification',
+                'location=no, toolbar=no, resizable=no, scrollbars=yes, directories=no, status=no, top=100, left=100, width=960, height=526'
+              )
+              return false
+            }}
+            className="inline-block mt-2"
+            aria-label="View CompliAssure SiteSeal verification"
+          >
+            <img
+              alt="CompliAssure SiteSeal"
+              src="https://www.rapidscansecure.com/siteseal/Seal.aspx?code=116,4151F4A3A6E41C88B5630203230BCF4FC7558F91"
+              className="border-0"
+              width={120}
+              height={60}
+            />
+          </a>
         </div>
       </div>
     </footer>
