@@ -181,7 +181,7 @@ export default function Footer() {
             onClick={(e) => {
               e.preventDefault()
               window.open(
-                'https://www.rapidscansecure.com/siteseal/Verify.aspx?code=116,4151F4A3A6E41C88B5630203230BCF4FC7558F91',
+                'https://www.rapidscansecure.com/siteseal/Verify.aspx?code=64,39585FCF3B2F8D60CA5C9FADD04E96BA14290771',
                 'Verification',
                 'location=no, toolbar=no, resizable=no, scrollbars=yes, directories=no, status=no, top=100, left=100, width=960, height=526'
               )
@@ -192,7 +192,7 @@ export default function Footer() {
           >
             <img
               alt="CompliAssure SiteSeal"
-              src="https://www.rapidscansecure.com/siteseal/Seal.aspx?code=116,4151F4A3A6E41C88B5630203230BCF4FC7558F91"
+              src="https://www.rapidscansecure.com/siteseal/Seal.aspx?code=64,39585FCF3B2F8D60CA5C9FADD04E96BA14290771"
               className="border-0"
               width={120}
               height={60}

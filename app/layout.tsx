@@ -123,7 +123,7 @@ export default function RootLayout({
           `}
         </Script>
         <Script
-          src="https://www.rapidscansecure.com/siteseal/siteseal.js?code=116,4151F4A3A6E41C88B5630203230BCF4FC7558F91"
+          src="https://rapidscansecure.com/siteseal/siteseal.js?code=64,39585FCF3B2F8D60CA5C9FADD04E96BA14290771"
           strategy="afterInteractive"
         />
       </body>
