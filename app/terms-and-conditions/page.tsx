@@ -87,12 +87,13 @@ export default function TermsAndConditionsPage() {
               of whether the customer is present at the time of delivery.
             </p>
             <p>
-              <strong className="text-white">Days 1–3:</strong> Charged at the 1–3-day price.
-              If your rental extends past the 3rd day, it will automatically convert to the
-              current 4–7 day rental rate.
+              <strong className="text-white">Short Rental—Up to 3 Days:</strong> Charged at
+              the short-rental price. If your rental is kept longer than 3 days, it will
+              automatically convert to the current weekly rental rate.
             </p>
             <p>
-              <strong className="text-white">Days 4–7:</strong> Charged at the 4–7-day price.
+              <strong className="text-white">Weekly Rental—Up to 7 Days:</strong> Charged at
+              the weekly rental price.
             </p>
             <p>
               <strong className="text-white">Days 8–10:</strong> Any additional days beyond
@@ -101,8 +102,9 @@ export default function TermsAndConditionsPage() {
             </p>
             <p>
               <strong className="text-white">Day 11 onward:</strong> Any additional time
-              beyond the 3-day extension period will begin a new 1–3-day or 4–7-day rental
-              period, depending on the length of the requested extension.
+              beyond the 3-day extension period will begin a new Short Rental—Up to 3 Days
+              or Weekly Rental—Up to 7 Days period, depending on the length of the requested
+              extension.
             </p>
             <p>
               Extensions are subject to availability and must be arranged before the scheduled

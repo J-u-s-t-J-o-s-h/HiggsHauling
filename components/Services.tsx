@@ -77,11 +77,13 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
       <p className="text-gray-300 text-sm mb-4">{service.dimensions}</p>
       <div className="space-y-3 text-gray-300 mb-6 flex-grow">
         <div className="bg-dark-gray/50 p-3 rounded">
-          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">1–3 days</p>
+          <p className="text-xs text-gold font-bold uppercase tracking-wide mb-1">Short Rental</p>
+          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">Up to 3 days</p>
           <p className="text-gold font-bold text-2xl">{service.price1to3} <span className="text-sm font-normal text-gray-400">+ tax</span></p>
         </div>
         <div className="bg-dark-gray/50 p-3 rounded">
-          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">4–7 days</p>
+          <p className="text-xs text-gold font-bold uppercase tracking-wide mb-1">Weekly Rental</p>
+          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">Up to 7 days</p>
           <p className="text-gold font-bold text-2xl">{service.price4to7} <span className="text-sm font-normal text-gray-400">+ tax</span></p>
         </div>
         <div className="pt-2 border-t border-gold/20">
@@ -157,11 +159,14 @@ export default function Services() {
         </motion.div>
 
         {/* Dumpster Size Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {dumpsterSizes.map((service, index) => (
             <ServiceCard key={service.size} service={service} index={index} />
           ))}
         </div>
+        <p className="text-center text-gray-300 text-sm md:text-base max-w-3xl mx-auto mt-6 mb-16">
+          Kept longer than 3 days? Your rental automatically converts to the weekly rate.
+        </p>
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
