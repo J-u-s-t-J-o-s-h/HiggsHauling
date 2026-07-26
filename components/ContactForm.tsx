@@ -243,7 +243,7 @@ export default function ContactForm() {
                            focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
                 >
                   <option value="">Select duration</option>
-                  <option value="1-3-days">1-3 Days</option>
+                  <option value="1-3-days">1–3 days</option>
                   <option value="1-week">1 Week</option>
                   <option value="2-weeks">2 Weeks</option>
                   <option value="1-month">1 Month</option>

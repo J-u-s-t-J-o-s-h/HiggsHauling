@@ -26,10 +26,10 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Elfsight Google Reviews | Untitled Google Reviews */}
+        {/* Elfsight All-in-One Reviews | Higgs Hauling */}
         <div className="w-full relative z-20 min-h-[400px]">
           <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" crossOrigin="anonymous" />
-          <div className="elfsight-app-18404027-f6af-49ce-8c01-e9acda0d2b6f" data-elfsight-app-lazy></div>
+          <div className="elfsight-app-53ab60e2-03b7-4579-99d6-4edb980a79a7" data-elfsight-app-lazy></div>
         </div>
       </div>
     </section>

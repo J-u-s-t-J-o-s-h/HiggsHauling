@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import BookingTermsDisclosure from '@/components/BookingTermsDisclosure'
 
 const BOOKING_URL = 'https://app.icans.ai/customer-portal/higgs-hauling-llc/book/'
 
@@ -13,7 +14,7 @@ const dumpsterSizes = [
     price1to3: '$340',
     price4to7: '$395',
     includedTons: '1 ton',
-    overageFee: '$60/ton',
+    overageFee: '$60 per additional ton or portion',
     ideal: 'Small cleanouts, minor renovations, yard waste'
   },
   {
@@ -22,7 +23,7 @@ const dumpsterSizes = [
     price1to3: '$360',
     price4to7: '$415',
     includedTons: '1 ton',
-    overageFee: '$60/ton',
+    overageFee: '$60 per additional ton or portion',
     ideal: 'Medium projects, bathroom remodels',
     popular: true
   },
@@ -32,7 +33,7 @@ const dumpsterSizes = [
     price1to3: '$420',
     price4to7: '$470',
     includedTons: '2 tons',
-    overageFee: '$60/ton',
+    overageFee: '$60 per additional ton or portion',
     ideal: 'Roofing, flooring removal, large cleanouts'
   }
 ]
@@ -76,11 +77,11 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
       <p className="text-gray-300 text-sm mb-4">{service.dimensions}</p>
       <div className="space-y-3 text-gray-300 mb-6 flex-grow">
         <div className="bg-dark-gray/50 p-3 rounded">
-          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">1-3 Day Price</p>
+          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">1–3 days</p>
           <p className="text-gold font-bold text-2xl">{service.price1to3} <span className="text-sm font-normal text-gray-400">+ tax</span></p>
         </div>
         <div className="bg-dark-gray/50 p-3 rounded">
-          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">4-7 Day Price</p>
+          <p className="text-xs text-gray-300 uppercase tracking-wide mb-1">4–7 days</p>
           <p className="text-gold font-bold text-2xl">{service.price4to7} <span className="text-sm font-normal text-gray-400">+ tax</span></p>
         </div>
         <div className="pt-2 border-t border-gold/20">
@@ -97,20 +98,23 @@ function ServiceCard({ service, index }: { service: typeof dumpsterSizes[0]; ind
       </div>
 
       {/* Reserve Button */}
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-full"
-      >
-        <motion.button
-          className="w-full btn-primary py-3 text-sm uppercase tracking-wide font-bold"
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
+      <div className="w-full space-y-2">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full block"
         >
-          Reserve Now
-        </motion.button>
-      </a>
+          <motion.button
+            className="w-full btn-primary py-3 text-sm uppercase tracking-wide font-bold"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Reserve Now
+          </motion.button>
+        </a>
+        <BookingTermsDisclosure />
+      </div>
     </motion.div>
   )
 }
@@ -193,4 +197,3 @@ export default function Services() {
     </section>
   )
 }
-

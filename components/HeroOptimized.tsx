@@ -8,6 +8,7 @@
  */
 
 import DumpsterButton from '@/components/DumpsterButton'
+import BookingTermsDisclosure from '@/components/BookingTermsDisclosure'
 import Image from 'next/image'
 
 const BOOKING_URL = 'https://app.icans.ai/customer-portal/higgs-hauling-llc/book/'
@@ -107,15 +108,16 @@ export default function HeroOptimized() {
         </div>
 
         {/* Secondary CTA Text */}
-        <div className="animate-fade-in animation-delay-600">
+        <div className="animate-fade-in animation-delay-600 space-y-3">
           <a
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-gold text-sm uppercase tracking-wide transition-colors"
+            className="text-gray-300 hover:text-gold text-sm uppercase tracking-wide transition-colors inline-block"
           >
             View Pricing &amp; Availability →
           </a>
+          <BookingTermsDisclosure className="max-w-md mx-auto" />
         </div>
       </div>
     </section>

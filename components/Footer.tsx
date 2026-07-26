@@ -73,6 +73,11 @@ export default function Footer() {
                   Get a Free Quote
                 </Link>
               </li>
+              <li>
+                <Link href="/terms-and-conditions" className="hover:text-gold transition-colors">
+                  Terms and Conditions
+                </Link>
+              </li>
             </ul>
 
             {/* Service Area Links - SEO keyword-rich anchor text */}

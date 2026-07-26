@@ -13,6 +13,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import BookingTermsDisclosure from '@/components/BookingTermsDisclosure'
 
 const navigationItems = [
   { name: 'Home', href: '/#hero', id: 'hero' },
@@ -114,14 +115,17 @@ export default function NavigationOptimized() {
             >
               Customer Login
             </a>
-            <a 
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary text-sm lg:text-base px-6 lg:px-8 py-2 lg:py-2.5 flex-shrink-0 inline-block hover:scale-105 transition-transform"
-            >
-              Order Online
-            </a>
+            <div className="flex flex-col items-end gap-1">
+              <a 
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-sm lg:text-base px-6 lg:px-8 py-2 lg:py-2.5 flex-shrink-0 inline-block hover:scale-105 transition-transform"
+              >
+                Order Online
+              </a>
+              <BookingTermsDisclosure align="right" className="max-w-[220px]" />
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -186,6 +190,7 @@ export default function NavigationOptimized() {
                 >
                   Order Online
                 </a>
+                <BookingTermsDisclosure className="mt-2 px-4" />
               </div>
             </div>
           </div>
