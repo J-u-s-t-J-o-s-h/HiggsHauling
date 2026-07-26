@@ -159,14 +159,11 @@ export default function Services() {
         </motion.div>
 
         {/* Dumpster Size Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
           {dumpsterSizes.map((service, index) => (
             <ServiceCard key={service.size} service={service} index={index} />
           ))}
         </div>
-        <p className="text-center text-gray-300 text-sm md:text-base max-w-3xl mx-auto mt-6 mb-16">
-          Kept longer than 3 days? Your rental automatically converts to the weekly rate.
-        </p>
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

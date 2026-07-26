@@ -87,24 +87,15 @@ export default function TermsAndConditionsPage() {
               of whether the customer is present at the time of delivery.
             </p>
             <p>
-              <strong className="text-white">Short Rental—Up to 3 Days:</strong> Charged at
-              the short-rental price. If your rental is kept longer than 3 days, it will
-              automatically convert to the current weekly rental rate.
+              <strong className="text-white">1–3 Day Rentals:</strong> If your rental extends
+              past the 3rd day, it will automatically convert to the current 1–7 day rental
+              rate.
             </p>
             <p>
-              <strong className="text-white">Weekly Rental—Up to 7 Days:</strong> Charged at
-              the weekly rental price.
-            </p>
-            <p>
-              <strong className="text-white">Days 8–10:</strong> Any additional days beyond
-              the 7th day are charged at $20 per additional day up to 3 additional days
-              (days 8–10), subject to availability and prior approval.
-            </p>
-            <p>
-              <strong className="text-white">Day 11 onward:</strong> Any additional time
-              beyond the 3-day extension period will begin a new Short Rental—Up to 3 Days
-              or Weekly Rental—Up to 7 Days period, depending on the length of the requested
-              extension.
+              <strong className="text-white">After 7 Days:</strong> Any additional days beyond
+              the 7th day are charged at $20 per day up to 3 additional days. Any additional
+              time beyond the 3-day extension period will begin a new 1–3 day or 1–7 day
+              rental period, depending on the length of the requested extension.
             </p>
             <p>
               Extensions are subject to availability and must be arranged before the scheduled
@@ -222,7 +213,7 @@ export default function TermsAndConditionsPage() {
             </p>
           </Section>
 
-          <Section title="Loading & Haul-Off Service">
+          <Section title="Loading & Haul-Off Service:">
             <p>
               If Higgs Hauling LLC provides labor to load debris, junk, or materials into the
               dumpster, pricing is based on the estimated volume, labor time, accessibility,
@@ -474,17 +465,6 @@ export default function TermsAndConditionsPage() {
             </p>
           </Section>
 
-          <p className="text-sm text-gray-400 pt-4 border-t border-gold/20">
-            Questions about these terms?{' '}
-            <a href="tel:+15802844717" className="text-gold hover:underline">
-              Call (580) 284-4717
-            </a>{' '}
-            or{' '}
-            <Link href="/#contact" className="text-gold hover:underline">
-              request a free estimate
-            </Link>
-            .
-          </p>
         </div>
       </article>
 
