@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { getAreaBySlug, getAllAreaSlugs } from '@/lib/serviceAreasData'
-import ServiceAreaContent, { ServiceAreaNotFound } from './ServiceAreaContent'
+import ServiceAreaContent from './ServiceAreaContent'
 
 /**
  * Dynamic Metadata for Service Area Pages
@@ -14,6 +15,10 @@ interface PageProps {
   params: Promise<{ area: string }>
 }
 
+// Only allow statically generated area slugs. Unknown paths must 404 instead of
+// returning an indexable HTTP 200 "Area Not Found" soft-404 page.
+export const dynamicParams = false
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { area: areaSlug } = await params
   const area = getAreaBySlug(areaSlug)
@@ -22,6 +27,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: 'Service Area Not Found | Higgs Hauling',
       description: 'The requested service area could not be found.',
+      robots: {
+        index: false,
+        follow: false,
+      },
     }
   }
 
@@ -80,7 +89,7 @@ export default async function ServiceAreaPage({ params }: PageProps) {
   const area = getAreaBySlug(areaSlug)
 
   if (!area) {
-    return <ServiceAreaNotFound />
+    notFound()
   }
 
   return <ServiceAreaContent area={area} areaSlug={areaSlug} />
