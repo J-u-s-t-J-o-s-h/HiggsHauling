@@ -24,7 +24,7 @@ export const faqData: FAQItem[] = [
   },
   {
     question: 'What can I put in the dumpster?',
-    answer: 'Most household and construction debris is welcome: furniture, appliances, wood, metal, drywall, shingles, flooring, and yard waste. We cannot accept hazardous materials, chemicals, paints, tires, batteries, or electronics. Contact us if you\'re unsure about specific items.'
+    answer: 'Most household and construction debris is welcome: furniture, wood, metal, drywall, shingles, flooring, and yard waste. Appliances and tires require prior approval. We cannot accept hazardous materials, chemicals, paints, batteries, or electronics. Contact us if you\'re unsure about specific items.'
   },
   {
     question: 'Do I need to be present for delivery and pickup?',

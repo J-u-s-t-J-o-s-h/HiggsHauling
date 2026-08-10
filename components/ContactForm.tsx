@@ -20,6 +20,15 @@ type FormData = {
   message: string
 }
 
+/** Format dates unambiguously for lead emails (avoid locale MM/DD vs DD/MM swaps). */
+function formatLeadDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+}
+
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -42,11 +51,11 @@ export default function ContactForm() {
     setErrorMessage('')
 
     try {
-      // Format dates for submission
+      // Format dates for submission (fixed en-US so Aug 10 never becomes "10/08")
       const formattedData = {
         ...data,
-        startDate: data.startDate ? data.startDate.toLocaleDateString() : '',
-        endDate: data.endDate ? data.endDate.toLocaleDateString() : '',
+        startDate: data.startDate ? formatLeadDate(data.startDate) : '',
+        endDate: data.endDate ? formatLeadDate(data.endDate) : '',
         access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'YOUR_WEB3FORMS_ACCESS_KEY'
       }
 
