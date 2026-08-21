@@ -20,7 +20,7 @@ export const faqData: FAQItem[] = [
   },
   {
     question: 'How long can I keep the dumpster?',
-    answer: 'Our standard rental period is 7 days, but we offer flexible terms to fit your schedule. Need it longer? No problem! Just let us know and we can arrange extended rental periods. Short-term rentals are also available for quick projects.'
+    answer: 'We offer short rentals (up to 3 days) and weekly rentals (up to 7 days). If a short rental is kept past the 3rd day, it automatically converts to the current weekly (1–7 day) rate. Need it longer than 7 days? Additional days are available at the published extension rate, and we can arrange longer-term rentals—just let us know.'
   },
   {
     question: 'What can I put in the dumpster?',
