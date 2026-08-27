@@ -33,8 +33,13 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     control,
+    watch,
+    setValue,
+    getValues,
     formState: { errors },
   } = useForm<FormData>()
+
+  const watchedStartDate = watch('startDate')
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true)
@@ -152,7 +157,8 @@ export default function ContactForm() {
                   {...register('phone', { 
                     required: 'Phone number is required',
                     pattern: {
-                      value: /^[0-9\s\-\(\)]+$/,
+                      // Allow optional leading + for E.164 / mobile autofill (e.g. +1 580...)
+                      value: /^\+?[0-9\s\-\(\)]+$/,
                       message: 'Invalid phone number'
                     }
                   })}
@@ -268,7 +274,14 @@ export default function ContactForm() {
                   render={({ field: { onChange, value } }) => (
                     <DatePicker
                       selected={value}
-                      onChange={onChange}
+                      onChange={(date) => {
+                        onChange(date)
+                        // Clear pickup if it would become before the new delivery date
+                        const currentEnd = getValues('endDate')
+                        if (date && currentEnd && currentEnd < date) {
+                          setValue('endDate', null)
+                        }
+                      }}
                       minDate={new Date()}
                       placeholderText="Select delivery date"
                       className="w-full px-4 py-3 bg-matte-black border border-gold/30 rounded-sm text-white 
@@ -294,23 +307,44 @@ export default function ContactForm() {
                 <Controller
                   control={control}
                   name="endDate"
+                  rules={{
+                    validate: (value) => {
+                      if (!value || !watchedStartDate) return true
+                      // Normalize to date-only so time-of-day cannot invert the check
+                      const pickup = new Date(value.getFullYear(), value.getMonth(), value.getDate())
+                      const delivery = new Date(
+                        watchedStartDate.getFullYear(),
+                        watchedStartDate.getMonth(),
+                        watchedStartDate.getDate()
+                      )
+                      return (
+                        pickup >= delivery ||
+                        'Pickup date must be on or after the delivery date'
+                      )
+                    },
+                  }}
                   render={({ field: { onChange, value } }) => (
                     <DatePicker
                       selected={value}
                       onChange={onChange}
-                      minDate={new Date()}
+                      minDate={watchedStartDate || new Date()}
                       placeholderText="Select pickup date (optional)"
                       className="w-full px-4 py-3 bg-matte-black border border-gold/30 rounded-sm text-white 
                                focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20 transition-all"
                       calendarClassName="bg-matte-black border border-gold/30"
-                      dayClassName={(date) => 
-                        date < new Date() 
+                      dayClassName={(date) => {
+                        const floor = watchedStartDate || new Date()
+                        const floorDay = new Date(floor.getFullYear(), floor.getMonth(), floor.getDate())
+                        return date < floorDay
                           ? "text-gray-500 cursor-not-allowed" 
                           : "text-white hover:bg-gold hover:text-matte-black"
-                      }
+                      }}
                     />
                   )}
                 />
+                {errors.endDate && (
+                  <p className="mt-1 text-sm text-red-400">{errors.endDate.message}</p>
+                )}
                 <p className="mt-1 text-xs text-gray-300">Leave blank if flexible pickup date</p>
               </div>
             </div>
